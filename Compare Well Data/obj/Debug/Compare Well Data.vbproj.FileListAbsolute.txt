@@ -1,0 +1,23 @@
+C:\Projects\Projects-ObservationWells-CompareWellData\Compare Well Data\obj\Debug\Compare Well Data.xml
+C:\Projects\Projects-ObservationWells-CompareWellData\Compare Well Data\bin\Compare Well Data.exe.config
+C:\Projects\Projects-ObservationWells-CompareWellData\Compare Well Data\bin\Compare Well Data.exe
+C:\Projects\Projects-ObservationWells-CompareWellData\Compare Well Data\bin\Compare Well Data.pdb
+C:\Projects\Projects-ObservationWells-CompareWellData\Compare Well Data\bin\Compare Well Data.xml
+C:\Projects\Projects-ObservationWells-CompareWellData\Compare Well Data\bin\CNPPID.dll
+C:\Projects\Projects-ObservationWells-CompareWellData\Compare Well Data\bin\Miscellaneous.dll
+C:\Projects\Projects-ObservationWells-CompareWellData\Compare Well Data\bin\ObservationWells.dll
+C:\Projects\Projects-ObservationWells-CompareWellData\Compare Well Data\bin\AboutBase.xml
+C:\Projects\Projects-ObservationWells-CompareWellData\Compare Well Data\bin\CNPPID.pdb
+C:\Projects\Projects-ObservationWells-CompareWellData\Compare Well Data\bin\CNPPID.xml
+C:\Projects\Projects-ObservationWells-CompareWellData\Compare Well Data\bin\Find Range.xml
+C:\Projects\Projects-ObservationWells-CompareWellData\Compare Well Data\bin\Miscellaneous.pdb
+C:\Projects\Projects-ObservationWells-CompareWellData\Compare Well Data\bin\Miscellaneous.xml
+C:\Projects\Projects-ObservationWells-CompareWellData\Compare Well Data\bin\ObservationWells.pdb
+C:\Projects\Projects-ObservationWells-CompareWellData\Compare Well Data\bin\ObservationWells.xml
+C:\Projects\Projects-ObservationWells-CompareWellData\Compare Well Data\obj\Debug\Compare_Well_Data.frmAbout.resources
+C:\Projects\Projects-ObservationWells-CompareWellData\Compare Well Data\obj\Debug\Compare_Well_Data.frmCompareWells.resources
+C:\Projects\Projects-ObservationWells-CompareWellData\Compare Well Data\obj\Debug\Compare_Well_Data.frmDefineRange.resources
+C:\Projects\Projects-ObservationWells-CompareWellData\Compare Well Data\obj\Debug\Compare_Well_Data.ReportDocument.resources
+C:\Projects\Projects-ObservationWells-CompareWellData\Compare Well Data\obj\Debug\Compare Well Data.vbproj.GenerateResource.Cache
+C:\Projects\Projects-ObservationWells-CompareWellData\Compare Well Data\obj\Debug\Compare Well Data.exe
+C:\Projects\Projects-ObservationWells-CompareWellData\Compare Well Data\obj\Debug\Compare Well Data.pdb

@@ -1,0 +1,121 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+Miscellaneous
+</name>
+</assembly>
+<members>
+<member name="M:Miscellaneous.Misc.AddDate(System.String@,System.String@)">
+	<summary>
+ Given two dates in the "MM-dd-yyyy" format, add them and return the new date.
+ Return vbNullString if an error occurs.
+ </summary>
+</member><member name="M:Miscellaneous.Misc.ConvertAFtoAI(System.Double,System.Double)">
+	<summary>
+ Convert an amount in Acre Feet to Acre Inches.  Returns 0 if dblAcres is 0.
+ </summary>
+</member><member name="M:Miscellaneous.Misc.ConvertAFToCFS(System.Double)">
+	<summary>
+ Convert an amount of Acre Feet to CFS.
+ </summary>
+</member><member name="M:Miscellaneous.Misc.ConvertAItoAF(System.Double,System.Double)">
+	<summary>
+ Given AcreInches and Acres, convert it to AcreFeet.  Rounds to 2 decimal places.
+ </summary>
+</member><member name="M:Miscellaneous.Misc.ConvertCFSToAF(System.Double)">
+	<summary>
+ Convert an amount in CFS to Acre Feet.
+ </summary>
+</member><member name="M:Miscellaneous.Misc.ConvertScanName(System.String)">
+	<summary>
+ Given strName in the form of LastName,FirstName MI convert it to
+ FirstName MI LastName.  If there is no comma, return strName.
+ </summary>
+</member><member name="M:Miscellaneous.Misc.FormatDT(System.DateTime,System.String)">
+	<summary>
+ Format dtToFormat as specified.  If strFormat is vbNullString, return
+ dtToFormat as MM/DD/yyyy.  
+ Valid format strings are MM/DD/yyy, MM/DD/yyyy HH:mm, MM/DD/yyyy HH:mm ampm
+ </summary>
+</member><member name="M:Miscellaneous.Misc.FormatDecimal(System.Double)">
+	<summary>
+ Since I don't know yet how to format numbers
+ the way I want to, I'm going to create my own function.
+ This formats the number with a leading 0 and
+ a decimal with two places.
+ </summary>
+</member><member name="M:Miscellaneous.Misc.FormatPhone(System.String)">
+	<summary>
+ Format a phone number if it's long enough.  If it's 7 characters long then
+ it will be formatted as XXX-XXXX and if it's 10 characters long then
+ format it as (XXX) XXX-XXXX.  Otherwise, return strPhone.
+ </summary>
+</member><member name="M:Miscellaneous.Misc.GetAccumulatedDays(System.Int32,System.Int32)">
+	<summary>
+ Return the number of days from the start of the year to the current day.  For example,
+ January 4th would be 4 days and May 6th would be 126 days.  NOTE this does not take
+ into account leap years so if you need that you will need to calculate an extra day
+ for dates past February 28th.
+ </summary>
+</member><member name="M:Miscellaneous.Misc.GetLastDay(System.Int32,System.Int32)">
+	<summary>
+ Given a month and year, return the last day of the month.
+ Takes into account leap year.
+ <param name="Month"> Month is the month. </param>
+		<param name="Year"> Year is the year the month is in. </param>
+		<returns> Returns the last day of the month in the year if Month is valid (between
+             1 and 12). </returns>
+		<returns> Returns 0 if month is not between 1 and 12. </returns>
+	</summary>
+</member><member name="M:Miscellaneous.Misc.InsertIntoLine(System.String,System.String,System.Int32)">
+	<summary>
+ Given a source string (strSource) and a string to put into (strToInsert), replace
+ the substring of strSource starting at intStart with the strToInsert.  If the length
+ of strSource is less than or equal to the length of strToInsert, strToInsert is
+ returned.  If intStart plus the length of strToInsert is greater than the length of
+ strSource, the left of strSource from 1..intStart - 1 concatenated with strToInsert
+ will be returned.  If intStart is less than or equal to 0, strSource is returned.
+ If an error occurs, vbNullString is returned.
+ </summary>
+</member><member name="M:Miscellaneous.Misc.InsertIntoLineCentered(System.String,System.String)">
+	<summary>
+ Insert strToInsert into the middle of strSource.  This returns strToInsert if
+ the length of strToInsert is greater than the length of strSource.  It returns
+ strSource if strToInsert is vbNullString.
+</summary>
+</member><member name="M:Miscellaneous.Misc.InsertRightJustified(System.String,System.String,System.Int32)">
+	<summary>
+ Insert strTarget into strSource, right justified at position intPos.  intPos is
+ where the rightmost character of strTarget will go.
+ </summary>
+</member><member name="M:Miscellaneous.Misc.SeqDay(System.String@)">
+	<summary>
+ Given an optional date in the form MM/DD/YYYY, this returns the sequential day
+ of the year.  If strDate is not specified, the current date is used.  In this
+ function, February always has 29 days.  To convert a sequential day to a date,
+ use SeqDayToDate.
+ </summary>
+</member><member name="M:Miscellaneous.Misc.SeqDayToDate(System.Int32@)">
+	<summary>
+ Given a sequential day between 1 and 366, return the date.  If the value is
+ outside of that range, or an error occurs, return vbNullString.  The date
+ will be in the form MM/DD, with no year.  To convert a date to a sequential day,
+ use SeqDay.
+ </summary>
+</member><member name="P:Miscellaneous.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:Miscellaneous.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:Miscellaneous.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+</members>
+</doc>

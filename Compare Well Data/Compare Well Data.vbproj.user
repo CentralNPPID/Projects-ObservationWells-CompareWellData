@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <LastOpenVersion>7.10.3077</LastOpenVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ReferencePath>J:\CampbellD\My Documents\Visual Studio Projects\Custom DLLs\CNPPID\CNPPID\bin\;J:\CampbellD\My Documents\Visual Studio Projects\Custom DLLs\Miscellaneous\Miscellaneous\bin\;J:\CampbellD\My Documents\Visual Studio Projects\Custom DLLs\Observation Wells\ObservationWells\bin\;J:\CampbellD\My Documents\Visual Studio Projects\Custom Forms\Find Range\bin\;J:\CampbellD\My Documents\Visual Studio Projects\AboutBase\bin\;C:\Documents and Settings\CampbellD.CNPPID\My Documents\Visual Studio Projects\Custom DLLs\CNPPID\CNPPID\bin\;C:\Documents and Settings\CampbellD.CNPPID\My Documents\Visual Studio Projects\Custom DLLs\Miscellaneous\Miscellaneous\bin\;C:\Documents and Settings\CampbellD.CNPPID\My Documents\Visual Studio Projects\Custom DLLs\Observation Wells\ObservationWells\bin\;C:\Documents and Settings\CampbellD.CNPPID\My Documents\Visual Studio Projects\Custom Forms\Find Range\bin\;C:\Documents and Settings\CampbellD.CNPPID\My Documents\Visual Studio Projects\AboutBase\bin\</ReferencePath>
+    <CopyProjectDestinationFolder />
+    <CopyProjectUncPath />
+    <CopyProjectOption>0</CopyProjectOption>
+    <ProjectView>ProjectFiles</ProjectView>
+    <ProjectTrust>0</ProjectTrust>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <EnableASPDebugging>false</EnableASPDebugging>
+    <EnableASPXDebugging>false</EnableASPXDebugging>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <EnableSQLServerDebugging>false</EnableSQLServerDebugging>
+    <RemoteDebugEnabled>false</RemoteDebugEnabled>
+    <RemoteDebugMachine />
+    <StartAction>Project</StartAction>
+    <StartArguments />
+    <StartPage />
+    <StartProgram />
+    <StartURL />
+    <StartWorkingDirectory />
+    <StartWithIE>true</StartWithIE>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <EnableASPDebugging>false</EnableASPDebugging>
+    <EnableASPXDebugging>false</EnableASPXDebugging>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <EnableSQLServerDebugging>false</EnableSQLServerDebugging>
+    <RemoteDebugEnabled>false</RemoteDebugEnabled>
+    <RemoteDebugMachine />
+    <StartAction>Project</StartAction>
+    <StartArguments />
+    <StartPage />
+    <StartProgram />
+    <StartURL />
+    <StartWorkingDirectory />
+    <StartWithIE>true</StartWithIE>
+  </PropertyGroup>
+</Project>

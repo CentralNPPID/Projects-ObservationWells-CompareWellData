@@ -1,0 +1,26 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Compare Well Data", "Compare Well Data\Compare Well Data.vbproj", "{1FECBAE2-DC1A-464E-BF08-54B0A3C51022}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Compare Well Data Setup", "Compare Well Data Setup\Compare Well Data Setup.vdproj", "{945C1AFE-F982-48FC-ABD1-4D9DBCFFAE71}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1FECBAE2-DC1A-464E-BF08-54B0A3C51022}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1FECBAE2-DC1A-464E-BF08-54B0A3C51022}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1FECBAE2-DC1A-464E-BF08-54B0A3C51022}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1FECBAE2-DC1A-464E-BF08-54B0A3C51022}.Release|Any CPU.Build.0 = Release|Any CPU
+		{945C1AFE-F982-48FC-ABD1-4D9DBCFFAE71}.Debug|Any CPU.ActiveCfg = Debug
+		{945C1AFE-F982-48FC-ABD1-4D9DBCFFAE71}.Release|Any CPU.ActiveCfg = Release
+		{945C1AFE-F982-48FC-ABD1-4D9DBCFFAE71}.Release|Any CPU.Build.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

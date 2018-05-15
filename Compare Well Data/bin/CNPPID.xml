@@ -1,0 +1,1009 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+CNPPID
+</name>
+</assembly>
+<members>
+<member name="P:CNPPID.Address.State">
+	<summary>
+ The two-letter abbreviation for the state.
+ <returns> Returns a string of 2 characters. </returns>
+	</summary>
+</member><member name="P:CNPPID.Address.Zip">
+	<summary>
+ The zip-Zip4 for this address.
+ <returns> Returns string formatted as XXXXX-XXXX. </returns>
+	</summary>
+</member><member name="M:CNPPID.Address.LoadAddress(System.Int32)">
+	<summary>
+ Load the information from the Address table.  
+ <param name="intID"> intID is an integer which represents the record number in the database. </param>
+		<returns> Returns True if the address is found and loaded or False if not. </returns>
+	</summary>
+</member><member name="M:CNPPID.Address.#ctor(System.Int32)">
+	<summary>
+ Load the address information.
+ <param name="intAddrID"> intAddrID is the integer representing the record key in the database. </param>
+	</summary>
+</member><member name="M:CNPPID.Address.#ctor">
+	<summary>
+ This is a stub that doesn't really do anything.  For those classes
+ that inherit from this, they have to make a call to
+ MyBase.New().  Since this class really requires an AddrID but 
+ the inherited classes won't have one yet, they can call this 
+ sub and then call the other one with the AddrID later.
+ </summary>
+</member><member name="M:CNPPID.Address.#ctor(System.String,System.String,System.String,System.String,System.String,System.String)">
+	<summary>
+ Create a new Address object using the supplied information.
+ </summary>
+</member><member name="M:CNPPID.Address.ToString">
+	<summary>
+ This puts the address together so that each portion is on its own line.  Lines are
+ separated by vbCrLf.  Empty lines are not included.  The city, state and Zip are
+ on the same line.
+ </summary>
+</member><member name="T:CNPPID.Address">
+	<remarks>
+ Class Address                                   
+ <para>
+		</para>                            
+ This class gets the address information from the Insight.Address table.     
+ Give the constructor the AddrID for the address and it will pull
+ the information back.
+ </remarks>
+</member><member name="T:CNPPID.DistrictAccount">
+	<remarks>
+ Class DistrictAccount
+ </remarks>
+</member><member name="P:CNPPID.DistrictEmployee.HomeDepartment">
+	<summary>
+		<returns> Returns a string representing the Office to which this account belongs. </returns>
+	</summary>
+</member><member name="P:CNPPID.DistrictEmployee.IsActive">
+	<summary>
+		<returns> Returns True if Status = 'A', False if not. </returns>
+	</summary>
+</member><member name="P:CNPPID.DistrictEmployee.PayType">
+	<summary>
+ The pay type (hourly or salaried) for this person.
+ <returns> Returns H or S </returns>
+	</summary>
+</member><member name="P:CNPPID.DistrictEmployee.Status">
+	<summary>
+		<returns> Returns A or I. </returns>
+	</summary>
+</member><member name="P:CNPPID.DistrictEmployee.StepAndGrade">
+	<summary>
+ The step and grade of this employee.
+ <returns> Returns a number and a letter, in the general form of N (X) </returns>
+	</summary>
+</member><member name="P:CNPPID.DistrictEmployee.UseNextYearForCalculations">
+	<summary>
+ This is set to True if we want to use next year in the calculations
+ for things like age and years of service.
+ </summary>
+</member><member name="P:CNPPID.DistrictEmployee.YearsOfService">
+	<summary>
+ How many years and months this employee has worked for the District.
+ <returns> Returns a string in the form of YY/MM. </returns>
+	</summary>
+</member><member name="M:CNPPID.DistrictEmployee.Compare(System.Object,System.Object)">
+	<summary>
+ Compares obj1.ToString to obj2.ToString.
+ <returns>
+			<para>  Returns -1 if obj1 is less than obj2    </para>
+			<para>  Returns 0 if obj1 equals obj2           </para>
+			<para>  Returns 1 if obj1 is greater than obj2  </para>
+		</returns>
+	</summary>
+</member><member name="M:CNPPID.DistrictEmployee.#ctor(System.String)">
+	<summary>
+ Instantiate a new instance of the class.  Errors are logged to the event log
+ with a source of DistrictEmployee.
+ <param name="strID"> strID is the EmployeeID of the employee to load. </param>
+	</summary>
+</member><member name="M:CNPPID.DistrictEmployee.#ctor(System.String,System.Boolean)">
+	<summary>
+ Instantiate a new instance of the class.  Errors are logged to the event log
+ with a source of DistrictEmployee.
+ <param name="strID"> strID is the EmployeeID of the employee to load. </param>
+		<param name="boolAssumeNextYear"> boolAssumeNextYear is True if we want 
+             to assume next year in time calculations. </param>
+	</summary>
+</member><member name="M:CNPPID.DistrictEmployee.LoadDeductions">
+	<summary>
+ Retrieve the deductions from the PREmployeeDeduct table for this
+ employee.
+ </summary>
+</member><member name="M:CNPPID.DistrictEmployee.LoadDriversLicense">
+	<summary>
+ Get the driver's license number and expiration date because it's kept separately
+ from the employee information.
+ </summary>
+</member><member name="M:CNPPID.DistrictEmployee.LoadEmployee">
+	<summary>
+ Load the employee information from the database.
+ </summary>
+</member><member name="M:CNPPID.DistrictEmployee.ToString">
+	<summary>
+		<returns>
+ Returns LastName,FirstName MiddleName
+ </returns>
+	</summary>
+</member><member name="T:CNPPID.DistrictEmployee">
+	<remarks>
+ Class DistrictEmployee
+ </remarks>
+</member><member name="M:CNPPID.Entity.Compare(System.Object,System.Object)">
+	<summary>
+ Compares obj1.ToString to obj2.ToString.
+ <param name="obj1"> obj1 is the first entity to compare. </param>
+		<param name="obj2"> obj2 is the second entity to compare. </param>
+		<returns>
+			<para>  Returns -1 if obj1 is less than obj2    </para>
+			<para>  Returns 0 if obj1 equals obj2           </para>
+			<para>  Returns 1 if obj1 is greater than obj2  </para>
+		</returns>
+	</summary>
+</member><member name="M:CNPPID.Entity.#ctor(System.String)">
+	<summary>
+ Load the entity information.
+	<param name="strCustomerID"> strCustomerID is the PrimeCustID or SecondCustID. </param>
+	</summary>
+</member><member name="M:CNPPID.Entity.ToString">
+	<summary>
+		<returns> Returns LastName,FirstName Middle Name </returns>
+	</summary>
+</member><member name="T:CNPPID.Entity">
+	<remarks>
+ Class Entity
+ </remarks>
+</member><member name="M:CNPPID.GenericColumnSorter.CompareTo(System.Object,System.Object)">
+	<summary>
+ Compare two objects and return an integer specifying how they compare.
+ If they are numbers, compare them as numbers.  If dates, compare them as dates.
+ Otherwise, compare them as strings.
+ <param name="o1"> o1 is the first object to compare </param>
+		<param name="o2"> o2 is the second object to compare </param>
+		<returns>
+			<para> Returns 1 if o1 is greater than o2   </para>
+			<para> Returns -1 if o1 is less than o2     </para>
+			<para> Returns 0 if they are equal          </para>
+		</returns>
+	</summary>
+</member><member name="M:CNPPID.GenericColumnSorter.#ctor(System.Int32,System.Windows.Forms.SortOrder)">
+	<summary>
+ The constructor for this sorter.
+ <param name="intColNo"> intColNo is the column number of the list view to sort. </param>
+		<param name="SortOrder"> SortOrder is how to sort the items. </param>
+	</summary>
+</member><member name="T:CNPPID.GenericColumnSorter">
+	<remarks>
+ Class GenericColumnSorter
+ Sort a listview column.  If the two items to compare are both numeric, they are sorted in
+ numeric order.  If they are dates, they are sorted as dates.
+ If not, they are sorted in case-insensitive order.
+ </remarks>
+</member><member name="M:CNPPID.NumericColumnSorter.CompareTo(System.Object,System.Object)">
+	<summary>
+ Compare two objects and return an integer specifying how they compare.
+ If they are numbers, compare them as numbers.  
+ Otherwise, compare them as strings.
+ <param name="o1"> o1 is the first object to compare   </param>
+		<param name="o2"> o2 is the second object to compare  </param>
+		<returns>
+			<para> Returns 1 if o1 is greater than o2   </para>
+			<para> Returns -1 if o1 is less than o2     </para>
+			<para> Returns 0 if they are equal          </para>
+		</returns>
+	</summary>
+</member><member name="M:CNPPID.NumericColumnSorter.#ctor(System.Int32,System.Windows.Forms.SortOrder)">
+	<summary>
+ The constructor for this class.
+ <param name="intColNo"> intColNo is the column number of the list view to sort. </param>
+		<param name="SortOrder"> SortOrder is how to sort the data. </param>
+	</summary>
+</member><member name="T:CNPPID.NumericColumnSorter">
+	<remarks>
+ Class NumericColumnSorter
+ This class sorts a listview column that holds numbers.  If one is blank then
+ it sorts higher than one that's not blank.
+ </remarks>
+</member><member name="M:CNPPID.TextColumnSorter.CompareTo(System.Object,System.Object)">
+	<summary>
+ Compare two objects and return an integer specifying how they compare.
+ If they are numbers, compare them as numbers.  If dates, compare them as dates.
+ Otherwise, compare them as strings.
+ <param name="o1"> o1 is the first object to compare </param>
+		<param name="o2"> o2 is the second object to compare </param>
+		<returns>
+			<para> Returns 1 if o1 is greater than o2 </para>
+			<para> Returns -1 if o1 is less than o2 </para>
+			<para> Returns 0 if they are equal </para>
+		</returns>
+	</summary>
+</member><member name="M:CNPPID.TextColumnSorter.#ctor(System.Int32,System.Windows.Forms.SortOrder)">
+	<summary>
+ The constructor for this class.
+ <param name="intColNo"> intColNo is the column number of the list view to sort. </param>
+		<param name="SortOrder"> SortOrder is how to sort the data. </param>
+	</summary>
+</member><member name="T:CNPPID.TextColumnSorter">
+	<remarks>
+ Class TextColumnSorter
+ This sorts a listview column based on the text.  No comparisons are made for
+ numbers or dates.
+ </remarks>
+</member><member name="T:CNPPID.clsCountingList.ArrayType">
+	<summary>
+ ArrayType is used to store the data in the internal array.
+ </summary>
+</member><member name="P:CNPPID.clsCountingList.NumItems">
+	<summary>
+ How many items are in the object.
+ </summary>
+</member><member name="P:CNPPID.clsCountingList.Sorted">
+	<summary>
+ Returns True if the list is sorted or False if not.
+ The list is sorted after a call to Sort() and is not sorted after every add.
+ </summary>
+</member><member name="M:CNPPID.clsCountingList.#ctor">
+	<summary>
+ Create a new instance of the class.
+ By default, the object will hold 100 items.
+ Use New(intCount) to create a new class with a 
+ different number of items.
+ </summary>
+</member><member name="M:CNPPID.clsCountingList.#ctor(System.Int32)">
+	<summary>
+ Create a new instance of the class.
+ By default, the object will hold intCount items.
+ <param name="intCount"> intCount is how many items to hold initially. </param>
+	</summary>
+</member><member name="M:CNPPID.clsCountingList.BinarySearch(System.String)">
+	<summary>
+ Do a binary search of the array and look for strKey.
+ This assumes the list is sorted.  If it isn't, use Sort().
+ The search is not case sensitive.
+ <param name="strKey"> strKey is the key to look for. </param>
+		<returns>
+			<para>  Returns the index of strKey in the array if strKey is in there. </para>
+			<para>  Returns -1 if it's not found.                                   </para>
+		</returns>
+	</summary>
+</member><member name="M:CNPPID.clsCountingList.ClearList">
+	<summary>
+ Clear the list and reset the number of items.
+ The array will have 1000 items by default.
+ To use a different number, use ClearList(intItems)
+ </summary>
+</member><member name="M:CNPPID.clsCountingList.ClearList(System.Int32)">
+	<summary>
+ Clear the list and reset the number of items.
+ The array will be redimensioned to intItems.
+ <param name="intItems"> intItems is how many items to reset the array to after clearing it. </param>
+	</summary>
+</member><member name="M:CNPPID.clsCountingList.GetDataWhereContains(System.String)">
+	<summary>
+ Return the key and data for every key that contains strKey.
+ The % is a valid character to use at the beginning or end of strKey to match.
+ The key and data are separated by vbTab and all data is concatenated with
+ vbCrLf.  The match works like this:
+ %strKey will get everything with a key that ends with the string "strKey"
+ strKey% will get everything with a key that begins with the string "strKey"
+ %strKey% will get everything that contains the string "strKey"
+ If you want to match the key exactly, use the IndexOf function.
+ <param name="strKey"> strKey is the key to search for in the array. </param>
+		<returns> Returns the data for the key found. </returns>
+	</summary>
+</member><member name="M:CNPPID.clsCountingList.GetItemAtIndex(System.Int32)">
+	<summary>
+ Return an item at a given index.  Return Nothing if intIndex is out of bounds.
+ <param name="intIndex"> intIndex is the index of the item to retrieve.
+                         It should be between 0 and arrData.Length.  </param>
+	</summary>
+</member><member name="M:CNPPID.clsCountingList.IndexOf(System.String)">
+	<summary>
+ Find the index of strKey within the array.  
+ <param name="strKey"> strKey is the key to find. </param>
+		<returns>
+			<para>  Returns the index if strKey is found.   </para>
+			<para>  Returns -1 if the key isn't found.      </para>
+		</returns>
+	</summary>
+</member><member name="M:CNPPID.clsCountingList.Item(System.String)">
+	<summary>
+ Retrieve item with the key of strKey.  
+ <param name="strKey"> strKey is the key whose data you want returned. </param>
+		<returns>
+			<para>  Returns the key, data and count for the key if it's found in the array. </para>
+			<para>  Returns Nothing if there is no such key. </para>
+		</returns>
+	</summary>
+</member><member name="M:CNPPID.clsCountingList.Item(System.Int32)">
+	<summary>
+ Return the item at intIndex.  
+ <param name="intIndex"> intIndex is the index in the internal array. </param>
+		<returns>
+			<para> Returns the key, data and count if intIndex is within the bounds of the array.  </para>
+			<para> Returns Nothing if intIndex is out of the range of the internal array.   </para>
+		</returns>
+	</summary>
+</member><member name="M:CNPPID.clsCountingList.QuickSort(System.Double,System.Double)">
+	<summary>
+ Sort the internal array. 
+ <param name="inLow"> inLow is the lower bound of the section of the array to sort. </param>
+		<param name="inHi"> inHi is the upper bound of the section of the array to sort. </param>
+	</summary>
+</member><member name="M:CNPPID.clsCountingList.Sort">
+	<summary>
+ Sort the array in ascending order.
+ Resets Sorted to True.
+ </summary>
+</member><member name="M:CNPPID.clsKeyStrokes.#ctor">
+	<summary>
+ The basic constructor for this class.
+ </summary>
+</member><member name="E:CNPPID.clsKeyStrokes.CancelPressed">
+	<summary>
+ This is raised if the user presses the Esc key.
+ </summary>
+</member><member name="E:CNPPID.clsKeyStrokes.okPressed">
+	<summary>
+ This is raised if the user presses the F10 key.
+ </summary>
+</member><member name="E:CNPPID.clsKeyStrokes.ScanKeyPressed">
+	<summary>
+ This is raised if the user presses the F2 or F3 key.
+ </summary>
+</member><member name="M:CNPPID.clsKeyStrokes.KeyDown(System.Windows.Forms.KeyEventArgs@)">
+	<summary>
+ Take any key.  If you want to change the case of letters to 
+ uppercase, handle that in the key press event of the control.
+ <param name="e"> e is the KeyEventArgs passed in to the calling sub. </param>
+		<returns>
+			<para>  Returns True if the key stroke was handled. </para>
+			<para>  Returns False if not.                       </para>
+		</returns>
+	</summary>
+</member><member name="M:CNPPID.clsKeyStrokes.KeyPressAlpha(System.Windows.Forms.KeyPressEventArgs,System.String)">
+	<summary>
+ This tests the key pressed to see if it's in the valid list of 
+ keys.  
+ <param name="strValidKeys"> strValidKeys can be any string that contains the valid characters, 
+ like "123AB" or ",.lad8D".  </param>
+		<returns>
+			<para>If the key stroke is not in the valid list, this sets e.Handled property to 
+ True and returns False.  </para>
+			<para> Otherwise, it leaves the Handled property alone and returns True. </para>
+		</returns>
+	</summary>
+</member><member name="M:CNPPID.clsKeyStrokes.KeyPressDecimal(System.Windows.Forms.KeyPressEventArgs,System.Object)">
+	<summary>
+ Check to see if the key pressed is a number (0-9), a dash or a period.  
+ <param name="e"> e is the KeyPressEventArgs sent into Box's KeyPressed event. </param>
+		<param name="Box"> Box is either a TextBox or ComboBox.  It is needed so we
+ can get the Text property and check for the presence of a decimal. </param>
+		<returns>
+			<para> This returns True if the key is valid. </para>
+			<para> Returns False and sets the e.handled property if the key press is not valid. </para>
+		</returns>
+	</summary>
+</member><member name="M:CNPPID.clsKeyStrokes.KeyPressInteger(System.Windows.Forms.KeyPressEventArgs)">
+	<summary>
+ Evaluate a key press from the user to see if it was an integer (0-9).
+ <param name="e"> e is the KeyPressEventArgs sent to the calling sub. </param>
+		<returns>
+			<para>  Returns True if the key stroke is valid. </para>
+			<para>  Returns False and sets the e.Handled property to True if the key is invalid. </para>
+		</returns>
+	</summary>
+</member><member name="T:CNPPID.clsKeyStrokes">
+	<remarks>
+ Class clsKeyStrokes
+ This is to interpret keystrokes from the user and validate that
+ they are the appropriate values.  
+ </remarks>
+</member><member name="E:CNPPID.LatLongCoordinates.ErrorLoading">
+	<summary>
+ This event is raised if there was an error loading the coordinates. 
+ </summary>
+</member><member name="M:CNPPID.LatLongCoordinates.DecDegToDMS(System.Double)">
+	<summary>
+ Given the decimal degrees, return a string containing the degrees, 
+ minutes and seconds.  It will be in the form DD-MM-SS.SSS.  No bounds 
+ checking is done on the input.  Formatting for the seconds can be 
+ handled by the calling function.  The formulas for this is:
+ deg = integer portion of DecDeg
+ min = integer portion of (decimal portion of DecDeg * 60)
+ sec = min * 60
+ <param name="DecDeg"> DecDeg is a double representing the decimal degrees. </param>
+		<returns>
+			<para> This returns the string formatted as DD-MM-SS.SSSS if no error occurred. </para>
+			<para> This returns a vbNullString if something is wrong. </para>
+		</returns>
+	</summary>
+</member><member name="M:CNPPID.LatLongCoordinates.IsValidLatDegree(System.Int32)">
+	<summary>
+		<param name="intLD"> intLD is the latitude degree value. </param>
+		<returns> Returns True if intLD is within the range of 0 - 90, inclusive, False if not. </returns>
+	</summary>
+</member><member name="M:CNPPID.LatLongCoordinates.IsValidLatMinute(System.Int32)">
+	<summary>
+		<param name="intLM"> intLM is the latitude minute value. </param>
+		<returns> Returns True if intLM is within the range of 0 - 59, inclusive, False if not. </returns>
+	</summary>
+</member><member name="M:CNPPID.LatLongCoordinates.IsValidLatSecond(System.Double)">
+	<summary>
+		<param name="dblLS"> dblLS is the latitude second value. </param>
+		<returns> Returns True if dblLS is greater than or equal to 0 and less than 60, False if not. </returns>
+	</summary>
+</member><member name="M:CNPPID.LatLongCoordinates.IsValidLongDegree(System.Int32)">
+	<summary>
+		<param name="intLD"> intLD is the longitude degree value. </param>
+		<returns> Returns True if intLD is within the range of 0 - 180, inclusive, False if not. </returns>
+	</summary>
+</member><member name="M:CNPPID.LatLongCoordinates.IsValidLongMinute(System.Int32)">
+	<summary>
+		<param name="intLM"> intLM is the longitude degree value. </param>
+		<returns> Returns True if intLM is within the range of 0 - 59, inclusive, False if not. </returns>
+	</summary>
+</member><member name="M:CNPPID.LatLongCoordinates.IsValidLongSecond(System.Double)">
+	<summary>
+		<param name="dblLS"> dblLS is the longitude second value. </param>
+		<returns> Returns True if dblLS is greater than or equal to 0 and less than 60, False if not. </returns>
+	</summary>
+</member><member name="M:CNPPID.LatLongCoordinates.LatDecimal">
+	<summary>
+		<returns> Returns the lat degree, lat minute, lat seconds as a decimal. </returns>
+	</summary>
+</member><member name="M:CNPPID.LatLongCoordinates.LongDecimal">
+	<summary>
+		<returns> Returns the long degree, long minute, long seconds as decimal. </returns>
+	</summary>
+</member><member name="M:CNPPID.LatLongCoordinates.#ctor(System.Int32,System.Int32,System.Double,System.Int32,System.Int32,System.Double)">
+	<summary>
+ The constructor for the class.
+ <param name="iLatDeg"> iLatDeg is the latitude degrees. </param>
+		<param name="iLatMin"> iLatMin is the latitude minutes. </param>
+		<param name="dLatSec"> dLatSec is the latitude seconds. </param>
+		<param name="iLongDeg"> iLongDeg is the longitude degrees. </param>
+		<param name="iLongMin"> iLongMin is the longitude minutes. </param>
+		<param name="dLongSec"> dLongSec is the longitude seconds. </param>
+	</summary>
+</member><member name="M:CNPPID.LatLongCoordinates.#ctor(System.Double,System.Double)">
+	<summary>
+ Create the object using the lat decimal and long decimal numbers.
+ <param name="dblLatDec"> dblLatDec is the latitude decimal number. </param>
+		<param name="dblLongSec"> dblLongSec is the longitude decimal number. </param>
+	</summary>
+</member><member name="M:CNPPID.LatLongCoordinates.#ctor">
+	<summary>
+ This is the default constructor.  It creates the new object but does not set any fields.
+ </summary>
+</member><member name="M:CNPPID.LatLongCoordinates.Parse(System.String)">
+	<summary>
+ Parse the input string by the delimiter of your choice (space, comma, tab, carriage return or slash)
+ and return the values.
+ <param name="strLatSort"> strLatSort is the string to parse. </param>
+		<returns> Returns the lat long coordinates if it parsed okay, Nothing if not. </returns>
+	</summary>
+</member><member name="M:CNPPID.LatLongCoordinates.PopulateLatitude(System.Double)">
+	<summary>
+ Populate the lat degree, minutes and seconds with the values pulled from dblLat.
+ <param name="dblLat"> dblLat is the latitude in decimal form. </param>
+	</summary>
+</member><member name="M:CNPPID.LatLongCoordinates.PopulateLongitude(System.Double)">
+	<summary>
+ Populate the long degree, minutes and seconds with the values pulled from dblLat.
+ <param name="dblLong"> dblLong is the longitude in decimal form. </param>
+	</summary>
+</member><member name="T:CNPPID.LatLongCoordinates">
+	<remarks>
+ Class LatLongCoordinates
+ This holds the values for lat/long coordinates and also gives the functionality
+ for calculating the decimal degrees for the lat and long.
+ </remarks>
+</member><member name="M:CNPPID.PLSS.IsValidRange(System.Int32)">
+	<summary>
+		<param name="intR"> intR is the range to validate. </param>
+		<returns> Returns True if the range is between 1 and 99, inclusive, False if not. </returns>
+	</summary>
+</member><member name="M:CNPPID.PLSS.IsValidSection(System.Int32)">
+	<summary>
+		<param name="intS"> intS is the section to validate. </param>
+		<returns> Returns True if the range is between 1 and 36, inclusive, False if not. </returns>
+	</summary>
+</member><member name="M:CNPPID.PLSS.IsValidSubsection(System.String)">
+	<summary>
+ Evaluate a subsection entry to see if it's valid.
+ <param name="strSS"> strSS is the subsection to validate. </param>
+		<returns> Returns True if strSS is any combination of the letters A, B, C or D, with 
+             a maximum of four letters and a minimum of 1. A blank subsection 
+             is not valid. </returns>
+	</summary>
+</member><member name="M:CNPPID.PLSS.IsValidTownship(System.Int32)">
+	<summary>
+		<param name="intT"> intT is the township to validate. </param>
+		<returns> Returns True if intT is between 1 nad 99, inclusive, False if not. </returns>
+	</summary>
+</member><member name="M:CNPPID.PLSS.#ctor(System.String,System.String,System.String,System.String,System.String)">
+	<summary>
+ The constructor for this class.
+ <param name="intT"> intT is the township. </param>
+		<param name="intR"> intR is the range. </param>
+		<param name="intSe"> intSe is the section. </param>
+		<param name="strSub"> strSub is the subsection. </param>
+		<param name="intSN"> intSN is the sequence number. </param>
+	</summary>
+</member><member name="M:CNPPID.PLSS.#ctor">
+	<summary>
+ This is the base constructor for the class.  It returns a new Object but does not 
+ populate the fields with any numbers.
+ </summary>
+</member><member name="M:CNPPID.PLSS.ToString">
+	<summary>
+ Returns TT RR SS Se SB SeqNo with a space between each field.
+ The township, range and section will be formatted with a leading 0 if 
+ they are one character wide.
+ <returns> Returns TT RR SS Se SB SeqNo with a space between each field. </returns>
+	</summary>
+</member><member name="T:CNPPID.PLSS">
+	<remarks>
+ Class PLSS
+ 
+ </remarks>
+</member><member name="T:CNPPID.Pop3.Pop3State">
+	<summary>
+ This tells what state the control is in.
+ </summary>
+</member><member name="P:CNPPID.Pop3.Pop3Message.Encoding">
+	<summary>
+ The encoding that the mail message was sent in.
+ </summary>
+</member><member name="P:CNPPID.Pop3.Pop3Message.EntireMessage">
+	<summary>
+ This is the entire message, including the header lines.
+ </summary>
+</member><member name="P:CNPPID.Pop3.Pop3Message.GUID">
+	<summary>
+ The GUID of the mail message.
+ </summary>
+</member><member name="P:CNPPID.Pop3.Pop3Message.Header">
+	<summary>
+ The header portion of the mail message.
+ </summary>
+</member><member name="P:CNPPID.Pop3.Pop3Message.MessageDate">
+	<summary>
+ When the message was sent.
+ </summary>
+</member><member name="P:CNPPID.Pop3.Pop3Message.MailboxID">
+	<summary>
+ This is the ID of the mailbox to which this message belongs.  It could be the index
+ of the mailbox in an array of the main program or it could be a mailbox
+ out of the EmailFiling.Mailboxes table.
+ </summary>
+</member><member name="P:CNPPID.Pop3.Pop3Message.NumAttachments">
+	<summary>
+ How many attachments are in the message.
+ </summary>
+</member><member name="P:CNPPID.Pop3.Pop3Message.Separator">
+	<summary>
+ The separator that separates the attachments.
+ </summary>
+</member><member name="M:CNPPID.Pop3.Pop3Message.AddAttachment(System.String)">
+	<summary>
+ Add an attachment to the mail message.
+ <param name="objAttach"> objAttach is name the attachment to add. </param>
+	</summary>
+</member><member name="M:CNPPID.Pop3.Pop3Message.GetAttachment(System.Int32)">
+	<summary>
+ Retrieve an attachment from the internal array of attachmnets.
+ <param name="intIndex"> intIndex is the index of the attachment to retrieve. </param>
+		<returns>
+			<para> Returns the attachmenet if intIndex is within the bounds of the internal array. </para>
+			<para> Returns Nothing if intIndex is not within the bounds of the internal array. </para>
+		</returns>
+	</summary>
+</member><member name="M:CNPPID.Pop3.Pop3Message.#ctor">
+	<summary>
+ Creates a new class and makes room for 10 attachments in the internal array.
+ </summary>
+</member><member name="T:CNPPID.Pop3.Pop3Message">
+	<remarks>
+ Class Pop3Message
+ This is the class that holds information about a mail message:  sender, attachments, etc.
+ </remarks>
+</member><member name="E:CNPPID.Pop3.RaiseError">
+	<summary>
+ This event is raised whenever an error occurs interally or with the mail server.
+ </summary>
+</member><member name="E:CNPPID.Pop3.IncomingText">
+	<summary>
+ This event is raised whenever the server comes back with a reply.
+ </summary>
+</member><member name="E:CNPPID.Pop3.OutgoingText">
+	<summary>
+ This event is raised whenever something is sent to the server.
+ </summary>
+</member><member name="E:CNPPID.Pop3.StatusChanged">
+	<summary>
+ This event is raised whenever the status changes, like when the class
+ connects or disconnects.
+ </summary>
+</member><member name="P:CNPPID.Pop3.AttachmentDirectory">
+	<summary>
+ This is the directory where the attachments are stored if SaveAttachments is True.
+ </summary>
+</member><member name="P:CNPPID.Pop3.Cancel">
+	<summary>
+ Set this to True if you want the mail control to stop what it's doing.
+ It is reset to False when the control checks mail again.
+ </summary>
+</member><member name="P:CNPPID.Pop3.CurrentState">
+	<summary>
+ What the control is currently doing.
+ </summary>
+</member><member name="P:CNPPID.Pop3.DownloadHeadersOnly">
+	<summary>
+ Set this to True before checking the mail if you only want the headers 
+ (From, To, Date), etc. and not the message body or the attachments.
+ </summary>
+</member><member name="P:CNPPID.Pop3.NumMessages">
+	<summary>
+ How many messages the control retrieved from the mail server.
+ </summary>
+</member><member name="P:CNPPID.Pop3.Password">
+	<summary>
+ Set this before checking the mail so the control can log into the server to check the mail.
+ </summary>
+</member><member name="P:CNPPID.Pop3.SaveAttachments">
+	<summary>
+ Set this to True if you want the attachments automatically saved to disk.
+ Don't forget to set the AttachmentDirectory attribute as well.
+ </summary>
+</member><member name="P:CNPPID.Pop3.ServerName">
+	<summary>
+ The name of the server to connect to and retrieve the emails from.
+ </summary>
+</member><member name="P:CNPPID.Pop3.UserName">
+	<summary>
+ This is the account name to use when logging into the mail server.
+ </summary>
+</member><member name="M:CNPPID.Pop3.Connect">
+	<summary>
+ Try to connect to the mail server with the previously supplied
+ user name and password.  You need to define the user name, password
+ and server name before using this function.  
+ Blank passwords are allowed but not blank user IDs or server names.  
+ NumMessages is set once the connection is made.
+ <returns>
+ Returns True if it was able to connect or False if not.  
+ </returns>
+	</summary>
+</member><member name="M:CNPPID.Pop3.CreateFromText(System.String)">
+	<summary>
+ Break apart strMessage into the header and body sections and create
+ a mail message from it.
+ If SaveAttachmentsToDisk is True, the attachments are saved to that directory.
+ <param name="strMessage"> strMessage is the string used as a source. </param>
+		<returns>
+ Returns a Pop3Message with all of the data filled in.
+ </returns>
+	</summary>
+</member><member name="M:CNPPID.Pop3.DecodeAttachments(CNPPID.Pop3.Pop3Message@,System.String@,System.String)">
+	<summary>
+ Decode a portion of the body of the message.  Add the attachments to the 
+ list of attachments of Msg.  
+ <param name="Msg"> Msg is the mail message we're decoding. </param>
+		<param name="strBody"> strBody is the portion of the body we're decoding. </param>
+		<param name="strSeparator"> strSeparator is what we're going to split strBody 
+             by to retrieve the parts. </param>
+	</summary>
+</member><member name="M:CNPPID.Pop3.DecodeBase64(System.String,System.String)">
+	<summary>
+ Save an attachment encoded as Base64 to a file on disk.
+ <param name="strMsg"> strMsg is the attachment to decode. </param>
+		<param name="strPath"> strPath is the full path, including filename, of the file to use
+ when saving to disk. </param>
+		<returns>
+			<para> Returns True if we were successfully able to save the attachment. </para>
+			<para> Returns False if an error occurred. </para>
+		</returns>
+	</summary>
+</member><member name="M:CNPPID.Pop3.DeleteByGUID(System.String)">
+	<summary>
+ Delete the message with GUID of strGUID.  Goes through the 
+ list of messages already downloaded to get the index of the
+ message with the same GUID.  This gives us a starting point
+ to start querying the server for the index.  Once we 
+ find the index, delete it and return True if we succeeeded
+ or False if not.
+ <param name="strGUID"> strGUID is the GUID of the message to delete. </param>
+		<returns>
+			<para> Returns True if the message is succesfully deleted. </para>
+			<para> Returns False if the message is not deleted. </para>
+		</returns>
+	</summary>
+</member><member name="M:CNPPID.Pop3.DeleteMessage(System.Int32)">
+	<summary>
+ Delete the message with index number msgIndex.  NOTE that this
+ is the 1-based index the mail server uses, not the 0-based index
+ that the class uses.  Returns True
+ if it was able to delete the message, False if not.  This assumes
+ we are already connected to the mail server.
+ <param name="msgIndex"> msgIndex is the index on the mail server. </param>
+		<returns>
+			<para> Returns True if the message was successfully deleted. </para>
+			<para> Returns False if the message was not successfully deleted. </para>
+		</returns>
+	</summary>
+</member><member name="M:CNPPID.Pop3.DownloadMessages">
+	<summary>
+ Download the messages from the server and store them in the
+ Messages() array.  The user can use the GetMessageByIndex() function
+ to retrieve a particular message from the array.  Sets intNumMessages
+ to the proper amount.
+ <returns>
+			<para> Returns True if the class is able to retrieve messages. </para>
+			<para> False if an error occurs. </para>
+		</returns>
+	</summary>
+</member><member name="M:CNPPID.Pop3.ExtractDate(System.String,System.String)">
+	<summary>
+ Extract the date portion out of a string formatted something like
+ Fri, 25 Jun 2002 07:14:51 -050.
+ You can pass in a format string as a valid format string for the 
+ Format function. This returns the original input if an error occurs.
+ <param name="strDate"> strDate is the string containing the original date. </param>
+		<param name="strFormat"> strFormat is the format to use on the extracted date. </param>
+	</summary>
+</member><member name="M:CNPPID.Pop3.ExtractEmailAddress(System.String)">
+	<summary>
+ Try to extract the e-mail address from the address given.  
+ <param name="strEmail"> strEmail is the line containing the email address. </param>
+		<returns>
+ Returns the email address if one is found in strEmail.
+ </returns>
+	</summary>
+</member><member name="M:CNPPID.Pop3.GenerateEmailFilename(System.String,System.String)">
+	<summary>
+ Generate a filename for an email attachment.  Use the message's separator
+ and massage it a little bit.  Then append a counter that we hold
+ here to keep the messages distinct.  Return the name or Nothing if
+ the message's separator is empty.
+ <param name="strSeparator"> strSeparator is the separator of the 
+                             email to which this attachment belongs. </param>
+		<param name="strExtension"> strExtension is the file extension to use.
+                             It should be like .txt, .eml, etc. </param>
+		<returns> Returns the filename. </returns>
+		<returns> Returns Nothing if the message separator is not defined. </returns>
+	</summary>
+</member><member name="M:CNPPID.Pop3.GetAttachments(CNPPID.Pop3.Pop3Message)">
+	<summary>
+ Get a list of the attachments in the message and add their
+ names to the Msg.Attachments() array.
+ </summary>
+</member><member name="M:CNPPID.Pop3.GetGUID(System.Int32)">
+	<summary>
+ Get the GUID for the message at intIndex.  The message should
+ already exist in the Messages() array.
+ <param name="intIndex"> intIndex is the index of message in the internal array
+ from which we want to retrieve the GUID. </param>
+		<returns>
+			<para> Returns the GUID from the message if intIndex is within the bounds of the array. </para>
+			<para> Returns vbNullString if intIndex is not within the bounds of the array. </para>
+		</returns>
+	</summary>
+</member><member name="M:CNPPID.Pop3.GetMessage(System.Int32)">
+	<summary>
+ Get the message given by msgIndex and return the entire text
+ of the message, header and all if boolDownloadHeadersOnly is
+ False.  Return just the header if boolDownloadHeadersOnly is
+ True.  You can use the CreateFromText function to turn the string into a mail message.
+ <param name="msgIndex"> msgIndex is the index of the message to retrieve. </param>
+		<returns>
+			<para> Returns the entire message if msgIndex is within the bounds of the array and
+ if boolDownloadHeadersOnly is False. </para>
+			<para> Returns the header if boolDownloadHeadersOnly is False and if msgIndex is
+ within the bounds of the array. </para>
+			<para> Returns vbNullString if msgIndex is not within the bounds of the array. </para>
+		</returns>
+	</summary>
+</member><member name="M:CNPPID.Pop3.GetMessageByIndex(System.Int32)">
+	<summary>
+ Retrieve the message given by intIndex.  
+ <param name="intIndex"> intIndex is the index of the message to retrieve. </param>
+		<returns>
+			<para> Returns the message if intIndex is within the bounds of the array. </para>
+			<para> Returns Nothing if the index is out of bounds. </para>
+		</returns>
+	</summary>
+</member><member name="M:CNPPID.Pop3.GetServerResponse(System.String)">
+	<summary>
+ Sends the message strMsg to the mail server and awaits a reply.
+ Returns the reply from the server.
+ <param name="strMsg"> strMsg is the message to give to the mail control. </param>
+		<returns> Returns the server's response. </returns>
+	</summary>
+</member><member name="M:CNPPID.Pop3.HasNewSeparator(System.String,System.String)">
+	<summary>
+ Determine if this attachment has another separator to it.
+ <param name="strAttach"> strAttach is the portion of the mail 
+                             message we're looking at. </param>
+		<param name="strSeparator"> strSeparator is the current message separator. </param>
+ ''' <returns> Returns True if a new separator is found. </returns>
+		<returns> Returns False if a new separator is not found. </returns>
+	</summary>
+</member><member name="M:CNPPID.Pop3.#ctor">
+	<summary>
+ The default constructor for this control.
+ </summary>
+</member><member name="M:CNPPID.Pop3.Quit">
+	<summary>
+ This tells the mail control to disconnect from the mail server no matter what it's doing.
+ Sets the state of the control to Disconnected.
+ </summary>
+</member><member name="M:CNPPID.Pop3.MakeValid(System.String)">
+	<summary>
+ Try to make strInput into a valid base64 encoded string.  It's valid if its length
+ is a multiple of 4.  
+ <param name="strInput"> strInput is the name of the text to evaluate. </param>
+		<returns> Returns the string made into a valid base 64 string. </returns>
+	</summary>
+</member><member name="M:CNPPID.Pop3.RetrieveContentType(System.String)">
+	<summary>
+ We want to retrieve the content type of a portion of the mail message.
+ Messages can be saved as text or base64 and the content type tells us if
+ we can convert it to text or if we need to save it to disk.
+ <param name="strBody"> strBody is the section of the mail message we're inspecting. </param>
+		<returns> Returns the content type in lowercase letters if it's in strBody. </returns>
+		<returns> Returns Nothing if it's not found or if strBody is Nothing. </returns>
+	</summary>
+</member><member name="M:CNPPID.Pop3.RetrieveEncoding(System.String)">
+	<summary>
+ Given the message, figure out the encoding.  
+ <param name="strBody"> strBody is the body of the message. </param>
+		<returns> Returns one of three values:
+ base64, text or uuencode
+ </returns>
+	</summary>
+</member><member name="M:CNPPID.Pop3.RetrieveFilename(System.String)">
+	<summary>
+ We want to retrieve the filename from this piece of the email message.
+ <param name="strPiece"> strPiece is the piece of the mail message we're decoding. </param>
+		<returns> Returns the filename if it's found. </returns>
+		<returns> Returns Nothing if the filename is not found. </returns>
+	</summary>
+</member><member name="M:CNPPID.Pop3.SaveAttachmentsToDisk(CNPPID.Pop3.Pop3Message@)">
+	<summary>
+ Find out if this message has any attachments in the body of
+ the message.  If so, we need to decode them and save them to
+ the collection of attachments and remove the 
+ attachments from the body of the message itself.
+ <param name="Msg"> Msg is the mail message to search. </param>
+	</summary>
+</member><member name="M:CNPPID.Pop3.SaveTextToDisk(System.String,System.String)">
+	<summary>
+ Save some text to a text file.
+ <param name="strToSave"> strToSave is the text we're going to save. </param>
+		<param name="strFilename"> strFilename is the full path to save to. </param>
+	</summary>
+</member><member name="M:CNPPID.Pop3.UUDecodeToFile(System.String,System.String)">
+	<summary>
+ NOTE:  This was borrowed from another VB project written by a 
+ different programmer.
+ Take a string of data encoded as uuencode and save it to disk.
+ <param name="strUUCodeData"> strUUCodeData is the entire string to decode. </param>
+		<param name="strPath"> strPath is the full path to the file we are going to save
+ the data to. </param>
+	</summary>
+</member><member name="T:CNPPID.Pop3">
+	<remarks>
+ Class Pop3
+ This is a class that retrieves emails.
+ </remarks>
+</member><member name="P:CNPPID.SettingsFile.FileName">
+	<summary>
+ This is the full path to the file we're going to save the settings to and read from.
+ </summary>
+</member><member name="P:CNPPID.SettingsFile.GlobalComment">
+	<summary>
+ This is the comment that goes for the entire file as opposed to a single setting.
+ </summary>
+</member><member name="P:CNPPID.SettingsFile.NumSettings">
+	<summary>
+ How many settings are stored in the internal array.
+ </summary>
+</member><member name="M:CNPPID.SettingsFile.AddSetting(System.String,System.String,System.String)">
+	<summary>
+ Add a setting with key strK and data strD and an optional
+ description of strDesc.  Increment intNumSettings.
+ <param name="strK"> strK is the key to use.  It must be unique or you will have
+ problems getting the values out later. </param>
+		<param name="strD"> strD is the data for the key. </param>
+		<param name="strDesc"> strDesc is the description for this item.  It is optional.  </param>
+		<returns>
+			<para> Returns True if we were able to add the setting.  </para>
+			<para> Returns False if not. </para>
+		</returns>
+	</summary>
+</member><member name="M:CNPPID.SettingsFile.FindIndex(System.String)">
+	<summary>
+ Find the index of the element in the array that has a key
+ of strName.  
+ <param name="strName"> strName is the name (key) of the setting to find.  </param>
+		<returns>
+			<para> Return the index if strName is found. </para>
+			<para> Return -1 if not strName is not found. </para>
+		</returns>
+	</summary>
+</member><member name="M:CNPPID.SettingsFile.GetSettingByIndex(System.Int32)">
+	<summary>
+ Retrieve the data for the index provided.
+ <param name="intIndex"> intIndex is the index of the internal array. </param>
+		<returns>
+			<para> Return the data for the element at Settings(intIndex) if intIndex is within the
+ bounds of the array. </para>
+			<para> Return vbNullString if intIndex is not within the bounds of the array. </para>
+		</returns>
+	</summary>
+</member><member name="M:CNPPID.SettingsFile.GetSettingByName(System.String)">
+	<summary>
+ Find the setting with the key of strName
+ <param name="strName"> strName is the key to find. </param>
+		<returns>
+			<para> Return the setting that has the corresponding strKey if one exists.  </para>
+			<para> Return Nothing if it's not found in the array. </para>
+		</returns>
+	</summary>
+</member><member name="M:CNPPID.SettingsFile.LoadFile">
+	<summary>
+ Load the XML file given by strName.  
+ <returns>
+ Return True if it can be loaded and read, False if not.
+ </returns>
+	</summary>
+</member><member name="M:CNPPID.SettingsFile.#ctor">
+	<summary>
+ The default constructor for this class.
+ </summary>
+</member><member name="M:CNPPID.SettingsFile.#ctor(System.String)">
+	<summary>
+ Create a new class and load the settings.
+ <param name="strName"> strName is the name of the file which holds settings previously 
+ saved by this class. </param>
+	</summary>
+</member><member name="M:CNPPID.SettingsFile.SaveFile">
+	<summary>
+ Save the elements to the file. 
+ <returns>
+ Returns True if the file was saved or False if not.
+ </returns>
+	</summary>
+</member><member name="T:CNPPID.SettingsFile">
+	<remarks>
+ Class SettingsFile
+ This allows you to save settings and retrieve them later using a text (xml)
+ file.  You can save whatever information you want using a string key
+ and a string data value.
+ </remarks>
+</member><member name="P:CNPPID.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:CNPPID.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:CNPPID.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+</members>
+</doc>

@@ -1,0 +1,668 @@
+<?xml version="1.0"?>
+<doc>
+  <assembly>
+    <name>Compare Well Data</name>
+    <version>2.1.0.0</version>
+    <fullname>Compare Well Data, Version=2.1.0.0, Culture=neutral, PublicKeyToken=null</fullname>
+  </assembly>
+  <members>
+    <member name="E:Compare_Well_Data.clsWellChange.ErrorOccurred">
+      <summary>
+ This is raised when an error occurs. 
+ </summary>
+    </member>
+    <member name="E:Compare_Well_Data.clsWellChange.ErrorOccurred">
+      <summary>
+ This is raised when an error occurs. 
+ </summary>
+    </member>
+    <member name="E:Compare_Well_Data.clsWellChange.ReadingsGathered">
+      <summary>
+ This is raised when the class is done gathering the readings. 
+ </summary>
+    </member>
+    <member name="E:Compare_Well_Data.clsWellChange.ReadingsGathered">
+      <summary>
+ This is raised when the class is done gathering the readings. 
+ </summary>
+    </member>
+    <member name="P:Compare_Well_Data.clsWellChange.AverageRecords">
+      <summary>
+ This is True if we're going to average multiple records for the start or end reading, if 
+ we have multiples.  This will always be the opposite of MatchRecords.  Setting this 
+ value also sets MatchRecords. 
+ </summary>
+    </member>
+    <member name="P:Compare_Well_Data.clsWellChange.EndDate">
+      <summary>
+ The end date of the well readings. 
+ </summary>
+    </member>
+    <member name="P:Compare_Well_Data.clsWellChange.EndReading">
+      <summary>
+ The last reading we calculated. 
+ </summary>
+    </member>
+    <member name="P:Compare_Well_Data.clsWellChange.LatDecimal">
+      <summary>
+ The latitude of the well to which this data belongs, expressed as a decimal. 
+ </summary>
+    </member>
+    <member name="P:Compare_Well_Data.clsWellChange.LongDecimal">
+      <summary>
+ The longitude of the well to which this data belongs, expressed as a decimal. 
+ </summary>
+    </member>
+    <member name="P:Compare_Well_Data.clsWellChange.LegalDescription">
+      <summary>
+ The well key converted to English-like name with township and range identified 
+ and the subsection and sequence number justified in spaces. 
+ e.g., T05 N R38 W 01 CAD 23 
+ </summary>
+    </member>
+    <member name="P:Compare_Well_Data.clsWellChange.MatchRecords">
+      <summary>
+ This is True if we're going to match a single record for the start or end reading, if 
+ we have multiples.  This means we will take the first reading in case of multiples. 
+ This will always be the opposite of AverageRecords. 
+ </summary>
+    </member>
+    <member name="P:Compare_Well_Data.clsWellChange.ReadingChange">
+      <summary>
+ The difference between the EndReading and StartReading. 
+ </summary>
+    </member>
+    <member name="P:Compare_Well_Data.clsWellChange.ReadInterval">
+      <summary>
+ This is the interval for the readings (monthly, quarterly, annually, within a year). 
+ </summary>
+    </member>
+    <member name="P:Compare_Well_Data.clsWellChange.ReadValue">
+      <summary>
+ This is interpreted in light of ReadInterval. 
+ If ReadInterval is Monthly, ReadValue should be between 1 and 12. 
+ If ReadInterval is Quarterly, ReadValue should be between 1 and 4. 
+ If ReadInterval is Annually or WithinAyear, ReadValue doesn't matter. 
+ </summary>
+    </member>
+    <member name="P:Compare_Well_Data.clsWellChange.StartDate">
+      <summary>
+ The start date of the well readings to measure. 
+ </summary>
+    </member>
+    <member name="P:Compare_Well_Data.clsWellChange.StartReading">
+      <summary>
+ The first reading we have. 
+ </summary>
+    </member>
+    <member name="P:Compare_Well_Data.clsWellChange.WellKey">
+      <summary>
+ The Township, Range, Section, Subsection and SeqNo of the well to which this 
+ data belongs. 
+ </summary>
+    </member>
+    <member name="P:Compare_Well_Data.clsWellChange.WellName">
+      <summary>
+ The name of the well to which this data belongs. 
+ </summary>
+    </member>
+    <member name="M:Compare_Well_Data.clsWellChange.BuildQuery(System.Int32,System.Int32)">
+      <summary>
+ Generate a query to execute the proper stored procedure, based on the 
+ options the user configured before calling GatherReadings. 
+ </summary>
+    </member>
+    <member name="M:Compare_Well_Data.clsWellChange.GatherReadings">
+      <summary>
+ Call this to gather the readings.  Value should be set before calling this, like: 
+ ReadInterval, ReadValue (if applicable), AverageRecords, StartDate and EndDate. 
+ </summary>
+    </member>
+    <member name="M:Compare_Well_Data.clsWellChange.GetReading(System.Int32,System.Int32)">
+      <summary>
+ Retrieve a reading for the well, month and year.  Return the first reading if 
+ we're matching a single record or the average of the readings if we're averaging them. 
+ Raise ErrorOccurred if an error occurs or if we can't get the measuring point that 
+ corresponds to the well measurement. 
+ </summary>
+    </member>
+    <member name="M:Compare_Well_Data.frmCompareWells.AddToReport(Compare_Well_Data.clsWellChange)">
+      <summary>
+ Add the information from this well change object to the report.  Put it into the right 
+ format as necessary, for delimited or regular formatting. 
+ </summary>
+    </member>
+    <member name="M:Compare_Well_Data.frmCompareWells.CreateHeader">
+      <summary>
+ Create the header for the report based on strDelimiter.  If it's empty, create a regular 
+ header suitable for printing.  If it's not, create the field names separated by strDelimiter. 
+ Add the lines to alReport and set intNumHeaderLines and intNumLines. 
+ </summary>
+    </member>
+    <member name="M:Compare_Well_Data.frmCompareWells.CreateLegalDesc(System.Int32,System.String,System.Int32,System.String,System.Int32,System.String,System.Int32)">
+      <summary>
+ Given all the available fields, create a string that contains the description with 
+ descriptors ("T", "R", etc).  The names have to be taken apart later so making these 
+ standard will make life easier later. 
+ </summary>
+    </member>
+    <member name="M:Compare_Well_Data.frmCompareWells.FindIndex(System.Windows.Forms.ComboBox,System.String)">
+      <summary>
+ A value has been passed into the program on the command line and we want to 
+ find the selected index of the combo box for the value. 
+ <param name="cboBox"> cboBox is the box to search in. </param>
+ <param name="strToFind"> strToFind is the string to find.  It is case sensitive. </param>
+ <returns> Returns the index if strToFind is found. </returns>
+ <returns> Returns -1 if nothing is found. </returns>
+ </summary>
+    </member>
+    <member name="M:Compare_Well_Data.frmCompareWells.EnableForm(System.Boolean)">
+      <summary>
+ The OK or the Cancel button has been clicked so we want to enable/disable all 
+ of the controls so the user can't change them while we're doing the report. 
+ <param name="Enable"> Enable is True to enable all of the controls or False to 
+                         disable them all. </param>
+ </summary>
+    </member>
+    <member name="M:Compare_Well_Data.frmCompareWells.GetFilename">
+      <summary>
+ Ask the user for a file to save the data to and set strFilename and strDelimiter 
+ to the proper values.  If the file exists, ask the user for permission to overwrite it. 
+ </summary>
+    </member>
+    <member name="M:Compare_Well_Data.frmCompareWells.GetWellKey(System.String)">
+      <summary>
+ Pull the well key data out of the Legal Desc so that it can be used to load 
+ a well for a clsWellChange object.  This assumes that LegalDesc is in the form 
+ that was created from CreateLegalDesc and looks to extract the relevant information 
+ out of this string. 
+ </summary>
+    </member>
+    <member name="M:Compare_Well_Data.frmCompareWells.GiveError(System.String,System.String)">
+      <summary>
+ Give an error to the user.  If the program was called from the command line 
+ then the message will be added to alErrors. 
+ <param namae="strMsg"> strMsg is what we're going to tell the user. </param>
+ <param name="strTitle"> strTitle will be the title of the message box. </param>
+ </summary>
+    </member>
+    <member name="M:Compare_Well_Data.frmCompareWells.PopulateAvailableWells">
+      <summary>
+ Get a list of the legal descriptions of the wells from the WellHeader table 
+ and fill the lstAvailableWells list box.  Each legal description will be formatted. 
+ The Sorted property of the list box should be set to True. 
+ </summary>
+    </member>
+    <member name="M:Compare_Well_Data.frmCompareWells.PopulateBox(System.Windows.Forms.ComboBox,System.Int32,System.Int32)">
+      <summary>
+ Fill cboBox with the integers from intStart to intEnd, inclusive. 
+ <param name="cboBox"> cboBox is the combo box to fill. </param>
+ <param name="intStart"> intStart is the lowest number. </param>
+ <param name="intEnd"> intEnd is the highest number. </param>
+ The text of cboBox is cleared and the SelectedIndex is set to 0. 
+ </summary>
+    </member>
+    <member name="M:Compare_Well_Data.frmCompareWells.PopulateDates">
+      <summary>
+ Get the start and end dates from the ObsWells.WellData table for all of the 
+ wells and populate the years boxes with every year from the start date 
+ to the end date. 
+ </summary>
+    </member>
+    <member name="M:Compare_Well_Data.frmCompareWells.PrepareReport">
+      <summary>
+ The user has clicked the OK button so we're going to get a file name if necessary and 
+ create a header, then go through all of the wells in lstSelectedWells and gather the 
+ changes for them, then put them into the report. 
+ </summary>
+    </member>
+    <member name="M:Compare_Well_Data.frmCompareWells.PrintToFile">
+      <summary>
+ The user wants to print the output to a file. 
+ strFilename has the name of the file to print to.  The output is in alReport and 
+ has already been formatted. 
+ </summary>
+    </member>
+    <member name="M:Compare_Well_Data.frmCompareWells.RangeDefined(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
+      <summary>
+ The range has been defined by the user so we're going to go through the list 
+ of available wells and for each one that's within that range, add it to 
+ the list of selected wells. 
+ </summary>
+    </member>
+    <member name="M:Compare_Well_Data.frmCompareWells.SetUpProgram(System.String)">
+      <summary>
+ This program can be called by parameters.  Call it like this: 
+ 
+ Period, Start Year, End Year, Match/Average, Output File Name, List... 
+ 
+ where Period = Month=MM or      MM = 1 - 12 
+                 Quarter=Q or    Q = 1-4 
+                 Annual, 
+                 WithinAYear 
+ StartYear = MM/YYYYY if WithinAYear, Start Year = YYYY otherwise, 
+ StartYear= MM/YYYYY if WithinAYear, End Year = YYYY otherwise, 
+ Match/Average = "Match" or "Average" 
+ OutputFileName = a valid file name 
+ List will be a series of TT RR SS SB SeqNo 
+ 
+ The output from the program will be put into a tab-delimited file by the name of 
+ OutputFileName.  The program will not show itself and will exit when done processing. 
+ </summary>
+    </member>
+    <member name="M:Compare_Well_Data.frmCompareWells.WellChange_ErrorOccurred(System.String)">
+      <summary>
+ An error has occurred in a well change object so we're going to tell the 
+ user about it. 
+ </summary>
+    </member>
+    <member name="T:Compare_Well_Data.ReportColumn">
+      <summary>
+ Defines a column into whch text can be rendered on a line 
+ of a table when the <see cref="T:vbReport.ReportDocument" />
+ is bound to a datasource. 
+ </summary>
+    </member>
+    <member name="F:Compare_Well_Data.ReportColumn.Name">
+      <summary>
+ Defines the human-readable name of the column. This value 
+ can be useful for generating descriptive headers. 
+ </summary>
+    </member>
+    <member name="F:Compare_Well_Data.ReportColumn.Field">
+      <summary>
+ Contains the name of the field within the data source that 
+ contains the data. This value is used to retrieve the data 
+ value from the data source. It corresponds to the column 
+ name in a DataTable, or a property name of an object. 
+ </summary>
+    </member>
+    <member name="F:Compare_Well_Data.ReportColumn.Left">
+      <summary>
+ Defines the horizontal start location (X coordinate) of the 
+ column. When text is written to the column by the 
+ <see cref="F:Compare_Well_Data.ReportColumn.Left" /> method 
+ it is rendered starting at this horizontal location. 
+ </summary>
+    </member>
+    <member name="F:Compare_Well_Data.ReportColumn.Width">
+      <summary>
+ Defines the width of the column. Before text is written to the 
+ column by the 
+ <see cref="F:Compare_Well_Data.ReportColumn.Width" /> method 
+ the column is filled with a white rectangle defined by the width 
+ of the column. This helps prevent text from overwriting other 
+ text within our columns. 
+ </summary>
+    </member>
+    <member name="T:Compare_Well_Data.ReportColumnCollection">
+      <summary>
+ Defines a strongly-typed collection that contains 
+ <see cref="T:vbReport.ReportColumn" /> objects. 
+ </summary>
+    </member>
+    <member name="P:Compare_Well_Data.ReportColumnCollection.Item(System.Int32)">
+      <summary>
+ Returns a specific <see cref="T:vbReport.ReportColumn" /> object 
+ from the collection. 
+ </summary>
+ <param name="index" />
+ <value>A specific column object.</value></member>
+    <member name="M:Compare_Well_Data.ReportColumnCollection.Add(Compare_Well_Data.ReportColumn)">
+      <summary>
+ Adds a <see cref="T:vbReport.ReportColumn" /> object 
+ to the collection. 
+ </summary>
+ <param name="column">A column object.</param></member>
+    <member name="M:Compare_Well_Data.ReportColumnCollection.Add(System.String)">
+      <summary>
+ Adds a <see cref="T:vbReport.ReportColumn" /> object 
+ to the collection based on a field name. The Name and Field 
+ of the column are set to the provided field name. The 
+ Left and Width values are 0 and must be set separately. 
+ </summary>
+ <param name="Field">The name of the data field.</param></member>
+    <member name="M:Compare_Well_Data.ReportColumnCollection.Add(System.String,System.Int32)">
+      <summary>
+ Adds a <see cref="T:vbReport.ReportColumn" /> object 
+ to the collection based on a field name. The Name and Field 
+ of the column are set to the provided field name. The 
+ Left value is set to the provided value. The Width value 
+ is 0 and must be set separately. 
+ </summary>
+ <param name="Field">The name of the data field.</param>
+ <param name="Left">The X position of the column.</param></member>
+    <member name="M:Compare_Well_Data.ReportColumnCollection.Add(System.String,System.String,System.Int32)">
+      <summary>
+ Adds a <see cref="T:vbReport.ReportColumn" /> object 
+ to the collection based on a field name. The Name and Field 
+ of the column are set to the provided values. The 
+ Left value is set to the provided value. The Width value 
+ is 0 and must be set separately. 
+ </summary>
+ <param name="Name">The human-readable column name.</param>
+ <param name="Field">The name of the data field.</param>
+ <param name="Left">The X position of the column.</param></member>
+    <member name="M:Compare_Well_Data.ReportColumnCollection.Remove(Compare_Well_Data.ReportColumn)">
+      <summary>
+ Removes the specified column object from the collection. 
+ </summary>
+ <param name="column">A column object.</param></member>
+    <member name="M:Compare_Well_Data.ReportColumnCollection.SetEvenSpacing(System.Int32)">
+      <summary>
+ Called by the data binding mechanism to automatically run 
+ through all the columns defined by this collection and to 
+ set their widths to evenly consume all the horizontal space 
+ on a line. 
+ </summary>
+ <param name="Width">The total width of a printed line.</param></member>
+    <member name="T:Compare_Well_Data.ReportDocument">
+      <summary>
+ <para>
+ ReportDocument extends the functionality of the standard standard <see cref="T:System.Drawing.Printing.PrintDocument" />
+ class by adding a number of new properties and events that make report generation easier. 
+ Additionally, these events provide a <see cref="T:vbReport.ReportPageEventArgs" /> parameter 
+ which provides extra properties and methods beyond the normal 
+ <see cref="T:System.Drawing.Printing.PrintPageEventArgs" />, again simplifying the 
+ report generation process. 
+ </para><para>
+ The ReportDocument class can be used just like a standard System.Drawing.Printing.PrintDocument 
+ class. In other words, the standard Print method, print dialogs and print preview capabilities 
+ of .NET work with ReportDocument just like they do with PrintDocument. 
+ </para>
+ </summary>
+    </member>
+    <member name="E:Compare_Well_Data.ReportDocument.ReportBegin">
+      <summary>
+ Raised once immediately before anything is printed to the report. The cursor is on the first line of the first page. 
+ </summary>
+    </member>
+    <member name="E:Compare_Well_Data.ReportDocument.ReportBegin">
+      <summary>
+ Raised once immediately before anything is printed to the report. The cursor is on the first line of the first page. 
+ </summary>
+    </member>
+    <member name="E:Compare_Well_Data.ReportDocument.PrintPageBegin">
+      <summary>
+ Raised for each page immediately before anything is printed to that page. The cursor is on the first line of the page. 
+ </summary>
+    </member>
+    <member name="E:Compare_Well_Data.ReportDocument.PrintPageBegin">
+      <summary>
+ Raised for each page immediately before anything is printed to that page. The cursor is on the first line of the page. 
+ </summary>
+    </member>
+    <member name="E:Compare_Well_Data.ReportDocument.PrintPageBodyStart">
+      <summary>
+ Raised for each page immediately after the header for the page has been printed. The cursor is on the first line of the report body. 
+ </summary>
+    </member>
+    <member name="E:Compare_Well_Data.ReportDocument.PrintPageBodyStart">
+      <summary>
+ Raised for each page immediately after the header for the page has been printed. The cursor is on the first line of the report body. 
+ </summary>
+    </member>
+    <member name="E:Compare_Well_Data.ReportDocument.PrintPageBodyEnd">
+      <summary>
+ Raised for each page immediately before the footer for the page is printed. The cursor is on the first line of the header. 
+ </summary>
+    </member>
+    <member name="E:Compare_Well_Data.ReportDocument.PrintPageBodyEnd">
+      <summary>
+ Raised for each page immediately before the footer for the page is printed. The cursor is on the first line of the header. 
+ </summary>
+    </member>
+    <member name="E:Compare_Well_Data.ReportDocument.PrintPageEnd">
+      <summary>
+ Raised for each page after the footer has been printed. The cursor is past the end of the footer, typically into the bottom margin of the page. 
+ </summary>
+    </member>
+    <member name="E:Compare_Well_Data.ReportDocument.PrintPageEnd">
+      <summary>
+ Raised for each page after the footer has been printed. The cursor is past the end of the footer, typically into the bottom margin of the page. 
+ </summary>
+    </member>
+    <member name="E:Compare_Well_Data.ReportDocument.ReportEnd">
+      <summary>
+ Raised once at the very end of the report after all other printing is complete. The cursor is past the end of the footer on the last page, typically into the bottom margin of the page. 
+ </summary>
+    </member>
+    <member name="E:Compare_Well_Data.ReportDocument.ReportEnd">
+      <summary>
+ Raised once at the very end of the report after all other printing is complete. The cursor is past the end of the footer on the last page, typically into the bottom margin of the page. 
+ </summary>
+    </member>
+    <member name="P:Compare_Well_Data.ReportDocument.Font">
+      <summary>
+ Allows the developer to set or retrieve the Font object that is used 
+ to render the text of the report. This defaults to a 10 point 
+ Courier New font. 
+ </summary>
+ <value>A Font object</value></member>
+    <member name="P:Compare_Well_Data.ReportDocument.Brush">
+      <summary>
+ Allows the developer to set or retrieve the Brush object that is 
+ used to render the text of the report. This defaults to a solid black 
+ brush. 
+ </summary>
+ <value>A Brush object</value></member>
+    <member name="P:Compare_Well_Data.ReportDocument.PageNumber">
+      <summary>
+ The current page number. 
+ </summary>
+    </member>
+    <member name="P:Compare_Well_Data.ReportDocument.SupressDefaultHeader">
+      <summary>
+ If this is set to True the default header will not be rendered at 
+ the top of each page. 
+ </summary>
+ <value>A Boolean indicating whether the default header should be supressed.</value></member>
+    <member name="P:Compare_Well_Data.ReportDocument.SupressDefaultFooter">
+      <summary>
+ If this is set to True the default footer will not be rendered at 
+ the bottom of each page. 
+ </summary>
+ <value>A Boolean indicating whether the default footer should be supressed.</value></member>
+    <member name="P:Compare_Well_Data.ReportDocument.FooterLines">
+      <summary>
+ Sets or returns the number of lines reserved at the bottom of each page 
+ for the footer. This defaults to 2 lines for the default footer. If you 
+ want to add extra lines to the footer you should increase this value accordingly. 
+ </summary>
+ <value>The number of lines reserved for the page footer.</value></member>
+    <member name="P:Compare_Well_Data.ReportDocument.Columns">
+      <summary>
+ Returns a collection of <see cref="P:Compare_Well_Data.ReportDocument.Columns" /> objects that 
+ represent the columns to be rendered in a table if the report is bound to 
+ a data source via the <see cref="P:Compare_Well_Data.ReportDocument.Columns" />
+ property. 
+ </summary>
+ <value>A collection of columns to be rendered in the report.</value></member>
+    <member name="P:Compare_Well_Data.ReportDocument.Title">
+      <summary>
+ The report title displayed at the top of each page. 
+ </summary>
+ <value>Text to be displayed.</value></member>
+    <member name="P:Compare_Well_Data.ReportDocument.SubTitleLeft">
+      <summary>
+ Text to be displayed on the left side of the line below the title on each page. 
+ </summary>
+ <value>Text to be displayed.</value></member>
+    <member name="P:Compare_Well_Data.ReportDocument.SubTitleRight">
+      <summary>
+ Text to be displayed on the right side of the line below the title on each page. 
+ </summary>
+ <value>Text to be displayed.</value></member>
+    <member name="P:Compare_Well_Data.ReportDocument.FooterLeft">
+      <summary>
+ Text to be displayed on the left side of the footer below the separator line 
+ at the bottom of each page. 
+ </summary>
+ <value>Text to be displayed.</value></member>
+    <member name="P:Compare_Well_Data.ReportDocument.FooterRight">
+      <summary>
+ Text to be displayed on the right side of the footer below the separator line 
+ at the bottom of each page. 
+ </summary>
+ <value>Text to be displayed.</value></member>
+    <member name="P:Compare_Well_Data.ReportDocument.ShowHeaderLine">
+      <summary>
+ Whether or not to print a line after the header to separate the header 
+ and the body.  Default is True. 
+ </summary>
+ <value>Print a line to separate the header and body. </value></member>
+    <member name="P:Compare_Well_Data.ReportDocument.HeaderJustification">
+      <summary>
+ How to print the header -- left, center or right. 
+ The default is Center. 
+ </summary>
+ <value>How to print the header -- left, center or right. </value></member>
+    <member name="P:Compare_Well_Data.ReportDocument.LeftMargin">
+      <summary>
+ The left margin of the page in hundredths of an inch. 
+</summary>
+ <value> The left margin of the page in hundredths of an inch. </value></member>
+    <member name="P:Compare_Well_Data.ReportDocument.RightMargin">
+      <summary>
+ The right margin of the page in hundredths of an inch. 
+</summary>
+ <value> The right margin of the page in hundredths of an inch. </value></member>
+    <member name="P:Compare_Well_Data.ReportDocument.TopMargin">
+      <summary>
+ The top margin of the page in hundredths of an inch. 
+</summary>
+ <value> The top margin of the page in hundredths of an inch. </value></member>
+    <member name="P:Compare_Well_Data.ReportDocument.BottomMargin">
+      <summary>
+ The bottom margin of the page in hundredths of an inch. 
+</summary>
+ <value> The bottom margin of the page in hundredths of an inch. </value></member>
+    <member name="P:Compare_Well_Data.ReportDocument.DataSource">
+      <summary>
+ By setting this property we provide the report with a data source. The 
+ data in the data source will be rendered into the report in tabular 
+ format based on the columns defined in the <see cref="P:Compare_Well_Data.ReportDocument.DataSource" />
+ property. 
+ </summary>
+ <value>A valid data source.</value></member>
+    <member name="P:Compare_Well_Data.ReportDocument.DataMember">
+      <summary>
+ The DataMember property allows us to easily set a single column 
+ of data to be displayed when the report is bound to a data source. 
+ If we want to display multiple columns of data in the report 
+ we should use the <see cref="P:Compare_Well_Data.ReportDocument.DataMember" />
+ property to define the columns. 
+ </summary>
+ <value>A valid data source.</value></member>
+    <member name="T:Compare_Well_Data.ReportLineJustification">
+      <summary>
+ This is a list of the possible text justification values 
+ used by the 
+ <see cref="M:vbReport.ReportPageEventArgs.Write(System.String,vbReport.ReportLineJustification)" />
+ and 
+ <see cref="M:vbReport.ReportPageEventArgs.WriteLine(System.String,vbReport.ReportLineJustification)" />
+ methods. 
+ </summary>
+    </member>
+    <member name="T:Compare_Well_Data.ReportPageEventArgs">
+      <summary>
+ The ReportPageEventArgs the type of the parameter provided by 
+ the events raised from the <see cref="T:vbReport.ReportDocument" />
+ object. This class includes methods to simplify the process of 
+ rendering text output into each page of the report. 
+ </summary>
+    </member>
+    <member name="M:Compare_Well_Data.ReportPageEventArgs.Write(System.String)">
+      <summary>
+ Writes some text to the report starting at the current cursor location. 
+ The cursor is moved to the right, but not down to the next line. 
+ </summary>
+ <param name="Text">The text to render.</param></member>
+    <member name="M:Compare_Well_Data.ReportPageEventArgs.Write(System.String,Compare_Well_Data.ReportLineJustification)">
+      <summary>
+ Writes text to the report on the current line, but justified based on 
+ the justification parameter value. 
+ The cursor is moved to the right, but not down to the next line. 
+ </summary>
+ <param name="Text">The text to render.</param>
+ <param name="Justification">Indicates the justification for the text.</param></member>
+    <member name="M:Compare_Well_Data.ReportPageEventArgs.WriteColumn(System.String,Compare_Well_Data.ReportColumn)">
+      <summary>
+ This method writes text into a specific column within the report on 
+ the current line. It uses a <see cref="T:vbReport.ReportColumn" />
+ object to define the X position and width of the column. The cursor 
+ is not moved by calling this method. 
+ </summary>
+ <param name="Text">The text to render into the column.</param>
+ <param name="column">The <see cref="T:vbReport.ReportColumn" /> object defining this column.</param></member>
+    <member name="M:Compare_Well_Data.ReportPageEventArgs.WriteLine">
+      <summary>
+ Moves the cursor down one line and to the left side of the page. 
+ </summary>
+    </member>
+    <member name="M:Compare_Well_Data.ReportPageEventArgs.WriteLine(System.String)">
+      <summary>
+ Writes text to the report starting at the current cursor location and 
+ then moves the cursor down one line and to the left side of the page. 
+ </summary>
+ <param name="Text">The text to render.</param></member>
+    <member name="M:Compare_Well_Data.ReportPageEventArgs.WriteLine(System.String,Compare_Well_Data.ReportLineJustification)">
+      <summary>
+ Writes text to the report on the current line, but justified based on 
+ the justification parameter value. 
+ The cursor is moved to the right, but not down to the next line. 
+ </summary>
+ <param name="Text">The text to render.</param>
+ <param name="Justification">Indicates the justification for the text.</param></member>
+    <member name="M:Compare_Well_Data.ReportPageEventArgs.HorizontalRule">
+      <summary>
+ Draws a horizontal line across the width of the page on the current 
+ line. After the line is drawn the cursor is moved down one line and 
+ to the left side of the page. 
+ </summary>
+    </member>
+    <member name="P:Compare_Well_Data.ReportPageEventArgs.CurrentX">
+      <summary>
+ Sets or returns the current X position (left to right) of the 
+ cursor on the page. 
+ </summary>
+ <value>The horizontal position of the cursor.</value></member>
+    <member name="P:Compare_Well_Data.ReportPageEventArgs.CurrentY">
+      <summary>
+ Sets or returns the current Y position (top to bottom) of the 
+ cursor on the page. 
+ </summary>
+ <value>The vertical position of the cursor.</value></member>
+    <member name="P:Compare_Well_Data.ReportPageEventArgs.CurrentFont">
+      <summary>
+ Added this 4/7/04 so I can access the font for finding 
+ the length of a string. 
+ </summary>
+    </member>
+    <member name="M:Compare_Well_Data.ReportPageEventArgs.PositionToStart">
+      <summary>
+ Moves the cursor to the top left corner of the page. 
+ </summary>
+    </member>
+    <member name="P:Compare_Well_Data.ReportPageEventArgs.PageBottom">
+      <summary>
+ Returns the Y value correspondign to the bottom of the page 
+ body. This is the position immediately above the start of the 
+ page footer. 
+ </summary>
+ <value>The Y value of the bottom of the page.</value></member>
+    <member name="P:Compare_Well_Data.ReportPageEventArgs.EndOfPage">
+      <summary>
+ Returns True if the cursor's current location is beyond the bottom of 
+ the page body. This doesn't mean we're into the bottom margin, but may 
+ indicate that the cursor in the page's footer region. 
+ </summary>
+ <value>A Boolean indicating whether the cursor is past the end of the page.</value></member>
+    <member name="P:Compare_Well_Data.ReportPageEventArgs.PageNumber">
+      <summary>
+ Returns the page number of the current page. This value is automatically 
+ incremented as each new page is rendered. 
+ </summary>
+ <value>The current page number.</value></member>
+  </members>
+</doc>

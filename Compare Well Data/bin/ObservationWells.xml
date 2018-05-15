@@ -1,0 +1,401 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+ObservationWells
+</name>
+</assembly>
+<members>
+<member name="E:ObservationWells.clsWSPool.ErrorOccurred">
+	<summary>
+ This is raised when an error occurs somewhere in the class.
+ </summary>
+</member><member name="P:ObservationWells.clsWSPool.Elevation">
+	<summary>
+ Elevation is the elevation of the pool PoolID and date MeasureDate.
+ </summary>
+</member><member name="P:ObservationWells.clsWSPool.IsNew">
+	<summary>
+ IsNew is True if no entry exists in ObsWells.WSPool for PoolID and MeasureDate.
+ It is set to False when the pool is updated or added.  It is left alone when a delete is done.
+ </summary>
+</member><member name="P:ObservationWells.clsWSPool.MeasureDate">
+	<summary>
+ This is the date the measurement was taken.  The hour is always at 00:00 because we
+ don't care about the time it was taken.
+ </summary>
+</member><member name="P:ObservationWells.clsWSPool.PoolID">
+	<summary>
+ This is the name of the pool.
+ </summary>
+</member><member name="P:ObservationWells.clsWSPool.Volume">
+	<summary>
+ This is the volume of the pool PoolID on the date MeasureDate.
+ </summary>
+</member><member name="M:ObservationWells.clsWSPool.#ctor(System.String,System.DateTime)">
+	<summary>
+ Create a new instance of the WSPool object.  
+ <param name="strID"> strID is the WS Pool ID. </param>
+		<param name="dtDate"> dtDate is the measurement date. </param>
+	</summary>
+</member><member name="M:ObservationWells.clsWSPool.DeletePool">
+	<summary>
+ Delete the pool information from ObsWells.WSPool.  This assumes the user has already
+ been asked to verify the deletion.
+ <returns> Returns True if the delete is successful. </returns>
+		<returns> Returns False if an error occurs. </returns>
+ IsNew is left alone.
+ </summary>
+</member><member name="M:ObservationWells.clsWSPool.LoadPool">
+	<summary>
+ Load the data for the pool.  Set IsNew accordingly.  Raise EventOccurred for
+ any errors.
+ </summary>
+</member><member name="M:ObservationWells.clsWSPool.UpdatePool">
+	<summary>
+ If IsNew, add the pool to the WSPool table.  If IsNew is False, update the
+ table's information.  Then set IsNew to False.  Raise ErrorOccurred for any events.
+ <returns> Returns True if the update was successful. </returns>
+		<returns> Returns False if an error occurred. </returns>
+	</summary>
+</member><member name="T:ObservationWells.clsWSPool">
+	<remarks>
+ This class represents the WSPool table entries.  A valid WSPool has a Pool ID and
+ a date.
+ </remarks>
+</member><member name="E:ObservationWells.clsWellElevation.ErrorOccurred">
+	<summary>
+ This is raised when an error occurs while loading the elevation information. 
+ </summary>
+</member><member name="P:ObservationWells.clsWellElevation.ElevationID">
+	<summary>
+ The unique key to the WellElevation table for this elevation reading.
+ WellElevation.ElevationID
+ </summary>
+</member><member name="P:ObservationWells.clsWellElevation.ErrorLoading">
+	<summary>
+ True if we had an error while loading the information for the well elevation,
+ False if not.
+ </summary>
+</member><member name="P:ObservationWells.clsWellElevation.IsNew">
+	<summary>
+ This is set to True when the elevation is loaded if no information is
+ found when accessing the ObsWells.WellElevation table.
+ </summary>
+</member><member name="P:ObservationWells.clsWellElevation.MeasureDay">
+	<summary>
+ The day the measurement was taken.  It can be 0 for an initial reading.
+ </summary>
+</member><member name="P:ObservationWells.clsWellElevation.MeasureMonth">
+	<summary>
+ The month the measurement was taken.  It can be 0 for an initial reading.
+ </summary>
+</member><member name="P:ObservationWells.clsWellElevation.MeasureYear">
+	<summary>
+ The year the measurement was taken.  It can be 0 for an initial reading.
+ </summary>
+</member><member name="P:ObservationWells.clsWellElevation.TRS">
+	<summary>
+ The TRS is the legal description of the well.
+ </summary>
+</member><member name="P:ObservationWells.clsWellElevation.WellID">
+	<summary>
+ The WellID of the well.
+ </summary>
+</member><member name="M:ObservationWells.clsWellElevation.#ctor(CNPPID.PLSS,System.Int32,System.Int32,System.Int32)">
+	<summary>
+ Call this to create a new object.  
+ <param name="plssKey"> plssKey is the legal description of the well. </param>
+		<param name="intMonth"> intMonth is the month of the measurement.  It can be 0. </param>
+		<param name="intDay"> intDay is the day of the measurement.  It can be 0. </param>
+		<param name="intYear"> intYear is the year of the measurement.  It can be 0. </param>
+	</summary>
+</member><member name="M:ObservationWells.clsWellElevation.#ctor(System.Int32,System.Int32,System.Int32,System.Int32)">
+	<summary>
+ Call this to create a new object.  
+ <param name="intID"> intID is the WellID of the well. </param>
+		<param name="intMonth"> intMonth is the month of the measurement.  It can be 0. </param>
+		<param name="intDay"> intDay is the day of the measurement.  It can be 0. </param>
+		<param name="intYear"> intYear is the year of the measurement.  It can be 0. </param>
+	</summary>
+</member><member name="M:ObservationWells.clsWellElevation.#ctor(System.Int32,System.Int32)">
+	<summary>
+ Create a new WellElevation object
+ <param name="intID"> intID is the WelllID of the well that was read. </param>
+		<param name="intEID"> intEID is the ElevationID of this measurement. </param>
+	</summary>
+</member><member name="M:ObservationWells.clsWellElevation.DeleteElevation">
+	<summary>
+ Deletes this elevation for the well.
+ Leaves IsNew alone.
+ <returns> Returns True if it's successfully deleted. </returns>
+		<returns> Returns False if an error occurs. </returns>
+	</summary>
+</member><member name="M:ObservationWells.clsWellElevation.GetElevationID(System.Int32,System.Int32,System.Int32,System.Int32)">
+	<summary>
+ This gets the WellElevation.ElevationID for the given measurement date.
+ <returns> Returns the ID if it's found. </returns>
+		<returns> Returns -1 if nothing is found or if an error occurs. </returns>
+	</summary>
+</member><member name="M:ObservationWells.clsWellElevation.GetMeasureDate(System.Int32,System.Int32@,System.Int32@,System.Int32@)">
+	<summary>
+ Get the measurement date from WellElevation for the given ElevationID.
+ <param name="intEID"> intEID is the ElevationID. </param>
+		<param name="intMeasureMonth"> intMeasureMonth is the month to be returned. </param>
+		<param name="intMeasureDay"> intMeasureDay is the day to be returned. </param>
+		<param name="intMeasureYear"> intMeasureYear is the year to be returned. </param>
+ intMeasureMonth, intMeasureDay, intMeasureYear can be 0.
+ </summary>
+</member><member name="M:ObservationWells.clsWellElevation.GetMPForMeasurement(System.Int32,System.DateTime)">
+	<summary>
+ Get the latest measuring point for the given well and measurement date.
+ Returns a WellElevation object with the ground, stickup and date in it or
+ Nothing if an error occurs.  Any errors are put into the event log.
+ <param name="intWellID"> intWellID is the ID of the well. </param>
+		<param name="dtMeasureDate"> dtMeasureDate is the date of the well measurement. </param>
+		<returns> Returns the measuring point that corresponds to dtMeasureDate. </returns>
+		<returns> Returns Nothing if an error occurs. </returns>
+	</summary>
+</member><member name="M:ObservationWells.clsWellElevation.LoadData">
+	<summary>
+ Load the data out of the ObsWells.WellElevation table.
+ </summary>
+</member><member name="M:ObservationWells.clsWellElevation.UpdateElevation">
+	<summary>
+ Add the elevation if IsNew is True or update the elevation if it's False.
+ Sets IsNew to False if no error occurs.
+ <returns> Returns True as long as no error occurs. </returns>
+		<returns> Returns False if an error occurs. </returns>
+	</summary>
+</member><member name="E:ObservationWells.clsWellData.ErrorOccurred">
+	<summary>
+ This is raised whenever an error occurs while loading, updating or deleting
+ the well data.
+ </summary>
+</member><member name="P:ObservationWells.clsWellData.CorrespondingMP">
+	<summary>
+ This is the measuring point that corresponds to this particular piece of well data.
+ It is the most current measurement that existed when this measurement was taken.
+ </summary>
+</member><member name="P:ObservationWells.clsWellData.DepthToOil">
+	<summary>
+ This is how far down we have to go to reach any oil on top of the water.
+ </summary>
+</member><member name="P:ObservationWells.clsWellData.DepthToWater">
+	<summary>
+ This is how far down we have to go to reach any water past the oil.
+ </summary>
+</member><member name="P:ObservationWells.clsWellData.ElevationID">
+	<summary>
+ This is the ID of the elevation measurement for this well data measurement.
+ WellData.ElevationID
+ </summary>
+</member><member name="P:ObservationWells.clsWellData.IsBadData">
+	<summary>
+ True if the data point is suspect or wrong, False if it's good.
+ </summary>
+</member><member name="P:ObservationWells.clsWellData.IsNew">
+	<summary>
+ This is set to True when creating a new WellData object if there is no record
+ in the database or False if there is data there.  It's set to False when
+ UpdateWellData is called as long as no error occurs while updating.
+ It's left alone when deleting well data.
+ </summary>
+</member><member name="P:ObservationWells.clsWellData.MeasureDate">
+	<summary>
+ The date this measurement was taken for the well.
+ </summary>
+</member><member name="P:ObservationWells.clsWellData.TRS">
+	<summary>
+ The legal description of the well to which this measurement belongs.
+ </summary>
+</member><member name="P:ObservationWells.clsWellData.WellID">
+	<summary>
+ This is the WellID of the well to which this measurement belongs.
+ </summary>
+</member><member name="P:ObservationWells.clsWellData.WellIsDry">
+	<summary>
+ True if the well is dry, False if not.
+ </summary>
+</member><member name="M:ObservationWells.clsWellData.DeleteWellData">
+	<summary>
+ Delete the well data from the ObsWells.WellData table.
+ Returns False if an error occurs, True otherwise.
+ Does not reset IsNew.
+ </summary>
+</member><member name="M:ObservationWells.clsWellData.GetCorrespondingMP">
+	<summary>
+ Reach into the WellElevation table and pull out the measuring point
+ that existed when this measurement was taken.
+ </summary>
+</member><member name="M:ObservationWells.clsWellData.GetUpdateQuery">
+	<summary>
+ Get the query to update the well.
+ </summary>
+</member><member name="M:ObservationWells.clsWellData.LoadData">
+	<summary>
+ Assuming we have set the measurement date and well ID, try to get the data from
+ the ObsWells.WellData table.
+ </summary>
+</member><member name="M:ObservationWells.clsWellData.UpdateData">
+	<summary>
+ Update the data in the ObsWells.WellData table for this well and measurement date.
+ It will add the data if it doesn't already exist or update it if it does.
+ Sets IsNew to False.
+ Raises the event ErrorOccurred if something goes wrong.
+ </summary>
+</member><member name="P:ObservationWells.clsObservationWell.ActionLevel">
+	<summary>
+ This is the upper level at which an alert needs to be raised to FERC.
+ It is also plotted on the well data graphs.
+ </summary>
+</member><member name="P:ObservationWells.clsObservationWell.CollectionMethod">
+	<summary>
+ How the well data is collected.
+ </summary>
+</member><member name="P:ObservationWells.clsObservationWell.IsNew">
+	<summary>
+ This is set to True when the observation well is loaded if no data has been
+ found in the WellHeader table.  It is set to False if data is found.
+ </summary>
+</member><member name="E:ObservationWells.clsObservationWell.ErrorOccurred">
+	<summary>
+ This is raised when an error occurs somewhere in the class module.
+ </summary>
+</member><member name="M:ObservationWells.clsObservationWell.#ctor">
+	<summary>
+ This creates a new well object but does not load anything.  IsNew is set to True.
+ </summary>
+</member><member name="M:ObservationWells.clsObservationWell.#ctor(System.Int32)">
+	<summary>
+ This creates a new well object and loads the information.  IsNew is set to True
+ if nothing is found in the database or False if something is found.
+ <param name="intID"> intID is the WellID of the well to load. </param>
+	</summary>
+</member><member name="M:ObservationWells.clsObservationWell.#ctor(CNPPID.PLSS)">
+	<summary>
+ This creates a new well object and loads the information.  IsNew is set to True
+ if nothing is found in the database or False if something is found.
+ <param name="LegalDesc"> LegalDesc is the legal description of the well. </param>
+	</summary>
+</member><member name="M:ObservationWells.clsObservationWell.DeleteWell">
+	<summary>
+ Deletes the well from the database.  NOTE you must have the well data for this well
+ deleted from the WellData table or an error will occur.
+ Returns True if it is deleted, or False if an error occurs.
+ If False, check the event log for an error with source of "ObsWells".
+ This will not delete a well if IsNew is True.
+ </summary>
+</member><member name="M:ObservationWells.clsObservationWell.GetLegalDescription(System.Int32)">
+	<summary>
+ Given a well ID number, retrieve the legal description out of the 
+ ObsWells.WellHeader table.
+ <param name="intID"> intID is the WellHeader.WellID of the well. </param>
+		<returns> Returns the legal description as a CNPPID.PLSS object if found. </returns>
+		<returns> Returns Nothing if an error occurs. </returns>
+	</summary>
+</member><member name="M:ObservationWells.clsObservationWell.GetWellID(CNPPID.PLSS)">
+	<summary>
+ Reach into the WellHeader table and pull the WellID for the well with a legal 
+ description that matches WellKey.
+ <param name="WellKey"> WellKey is the legal description of the well to find. </param>
+		<returns> Returns the ID of the well if it's found. </returns>
+		<returns> Returns 0 if nothing is found to match the description. </returns>
+		<returns> Returns -1 if an error occurs.  Check the event log if this happens. </returns>
+	</summary>
+</member><member name="M:ObservationWells.clsObservationWell.LoadWell">
+	<summary>
+ Load all of the data for the well from the database.
+ Sets IsNew to True if the well is new, False if not. 
+ Check the ErrorOccurred property after this to see if there were any errors.
+ </summary>
+</member><member name="M:ObservationWells.clsObservationWell.UpdateWell">
+	<summary>
+ This inserts the well data if IsNew is True, or updates it if IsNew is False.
+ This returns True as long as no error occurs.  If False, check the event log for errors.
+ </summary>
+</member><member name="M:ObservationWells.clsObservationWell.WellDataExists(System.Int32)">
+	<summary>
+ Look into the WellData table and see if any data exists for a well with ID of intID.
+ <param name="intID"> intID is the WellID of the well we're interested in. </param>
+		<returns> Returns True if data exists in the WellData table, False if not. </returns>
+ Errors are logged to the event log.
+ </summary>
+</member><member name="M:ObservationWells.clsObservationWell.WellElevationExists(System.Int32)">
+	<summary>
+ Determine if a given well has a measuring point stored in the database.
+ <param name="WellID"> WellID is the ID of the well. </param>
+		<returns> Returns True if a measuring point exists in the ObsWells.WellHeader table
+         for this well. </returns>
+		<returns> Returns False if no measuring point exists or if an error occurs. </returns>
+	</summary>
+</member><member name="E:ObservationWells.clsBoringLog.ErrorOccurred">
+	<summary>
+ This is raised whenever an error occurs.
+ <param name="strMsg"> strMsg is the error message. </param>
+	</summary>
+</member><member name="P:ObservationWells.clsBoringLog.Description">
+	<summary>
+ This is what is found when the well is being drilled.
+ It is different for each well and for each StartDepth to EndDepth.
+ </summary>
+</member><member name="P:ObservationWells.clsBoringLog.EndDepth">
+	<summary>
+ The EndDepth is how far down the drilling went.
+ </summary>
+</member><member name="P:ObservationWells.clsBoringLog.IsNew">
+	<summary>
+ This is True if no information is found in the ObsWells.BoringLogs table
+ when we load the information from a call to New.
+ </summary>
+</member><member name="P:ObservationWells.clsBoringLog.ParentWell">
+	<summary>
+ This is the well to which this boring log belongs.
+ You can use this to retrieve the PLSS.
+ </summary>
+</member><member name="P:ObservationWells.clsBoringLog.StartDepth">
+	<summary>
+ This is where the drilling started.
+ </summary>
+</member><member name="M:ObservationWells.clsBoringLog.#ctor(CNPPID.PLSS,System.Double,System.Double)">
+	<summary>
+ This creates a new BoringLog object and sets IsNew to True if nothing is
+ found in the database or False if something is found.
+ ErrorOccurred is raised if an error occurs.
+ </summary>
+</member><member name="M:ObservationWells.clsBoringLog.DeleteBoringLog">
+	<summary>
+ Delete the boring log from the ObsWells.BoringLogs table. 
+ Does not set IsNew.
+ <returns> Returns True if it's deleted successfully. </returns>
+		<returns> Returns False if IsNew is True or if an error occurs. </returns>
+ Raises ErrorOccurred if an error occurs.
+ </summary>
+</member><member name="M:ObservationWells.clsBoringLog.LoadBoringLog">
+	<summary>
+ Try to load the information for the boring log.
+ ErrorOccurred is raised if an error occurs while trying to do this.
+ IsNew is set to True if nothing is retrieved or False if something is found.
+ </summary>
+</member><member name="M:ObservationWells.clsBoringLog.UpdateBoringLog">
+	<summary>
+ Update the boring log if it's not new or add it if it is.  Set IsNew to False.
+ <returns> Returns True if this was done successfully. </returns>
+		<returns> Returns False if an error occurs and raises ErrorOccurred. </returns>
+	</summary>
+</member><member name="P:ObservationWells.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:ObservationWells.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:ObservationWells.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+</members>
+</doc>

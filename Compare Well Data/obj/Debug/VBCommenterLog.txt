@@ -1,0 +1,6 @@
+Parsing file: J:\CampbellD\My Documents\Visual Studio Projects\Observation Wells\Compare Well Data\Compare Well Data\clsWellChange.vb
+Parsing file: J:\CampbellD\My Documents\Visual Studio Projects\Observation Wells\Compare Well Data\Compare Well Data\frmCompareWells.vb
+Parsing file: J:\CampbellD\My Documents\Visual Studio Projects\Observation Wells\Compare Well Data\Compare Well Data\ReportColumn.vb
+Parsing file: J:\CampbellD\My Documents\Visual Studio Projects\Observation Wells\Compare Well Data\Compare Well Data\ReportColumnCollection.vb
+Parsing file: J:\CampbellD\My Documents\Visual Studio Projects\Observation Wells\Compare Well Data\Compare Well Data\ReportDocument.vb
+Parsing file: J:\CampbellD\My Documents\Visual Studio Projects\Observation Wells\Compare Well Data\Compare Well Data\ReportPageEventArgs.vb
