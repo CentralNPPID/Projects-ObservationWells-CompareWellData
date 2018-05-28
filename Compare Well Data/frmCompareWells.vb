@@ -879,7 +879,8 @@ Dim strLine As String
     Else
 
         With WC
-            strLine = .LegalDescription & strDelimiter & _
+            strLine = .WellId & strDelimiter & _
+                        .LegalDescription & strDelimiter & _
                         .WellName & strDelimiter & _
                         .LatDecimal.ToString & strDelimiter & _
                         .LongDecimal.ToString & strDelimiter & _
@@ -989,7 +990,8 @@ Dim strLine As String
 
     Else
 
-        strLine = "Legal" & strDelimiter & _
+        strLine = "WellId" & strDelimiter & _
+                "Legal" & strDelimiter & _
                 "Name" & strDelimiter & _
                 "LatDec" & strDelimiter & _
                 "LongDec" & strDelimiter & _

@@ -6,10 +6,8 @@ C:\Projects\Projects-ObservationWells-CompareWellData\Compare Well Data\bin\Comp
 C:\Projects\Projects-ObservationWells-CompareWellData\Compare Well Data\bin\CNPPID.dll
 C:\Projects\Projects-ObservationWells-CompareWellData\Compare Well Data\bin\Miscellaneous.dll
 C:\Projects\Projects-ObservationWells-CompareWellData\Compare Well Data\bin\ObservationWells.dll
-C:\Projects\Projects-ObservationWells-CompareWellData\Compare Well Data\bin\AboutBase.xml
 C:\Projects\Projects-ObservationWells-CompareWellData\Compare Well Data\bin\CNPPID.pdb
 C:\Projects\Projects-ObservationWells-CompareWellData\Compare Well Data\bin\CNPPID.xml
-C:\Projects\Projects-ObservationWells-CompareWellData\Compare Well Data\bin\Find Range.xml
 C:\Projects\Projects-ObservationWells-CompareWellData\Compare Well Data\bin\Miscellaneous.pdb
 C:\Projects\Projects-ObservationWells-CompareWellData\Compare Well Data\bin\Miscellaneous.xml
 C:\Projects\Projects-ObservationWells-CompareWellData\Compare Well Data\bin\ObservationWells.pdb

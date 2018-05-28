@@ -64,12 +64,6 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_DEC3367BB3D67691D40ACF28DA6DEAA1"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_AFFFC3C843F44CCDB4B5B90DAB66D5CC"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -97,6 +91,12 @@
         "OwnerKey" = "8:_52ADD1EE57054A79B81C1A0526BA78B1"
         "MsmSig" = "8:_UNDEFINED"
         }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_DEC3367BB3D67691D40ACF28DA6DEAA1"
+        "MsmSig" = "8:_UNDEFINED"
+        }
     }
     "Configurations"
     {
@@ -115,6 +115,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
         "Release"
         {
@@ -131,6 +139,22 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.5"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.5 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.5"
+                    }
+                }
+            }
         }
     }
     "Deployable"
@@ -469,15 +493,15 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Compare Well Data Setup"
-        "ProductCode" = "8:{8E2BD163-9EE6-44A5-81D2-3D9126D226B2}"
-        "PackageCode" = "8:{FC4486F4-24FC-47FB-93D8-00FDF7B35DF3}"
+        "ProductCode" = "8:{8F8E59B3-53E8-4628-9FB2-18DFBB9870E7}"
+        "PackageCode" = "8:{9A175AB4-D5C7-46B0-8AC2-B1FD843D7FD3}"
         "UpgradeCode" = "8:{4508121E-75DE-4124-A1E6-A85526288EA8}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:TRUE"
-        "ProductVersion" = "8:4.0.0"
+        "ProductVersion" = "8:4.0.1"
         "Manufacturer" = "8:CNPPID"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
@@ -1005,7 +1029,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_AFFFC3C843F44CCDB4B5B90DAB66D5CC"
             {
-            "SourcePath" = "8:..\\Compare Well Data\\obj\\Debug\\Compare Well Data.exe"
+            "SourcePath" = "8:..\\Compare Well Data\\obj\\Release\\Compare Well Data.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_54FAC65A739148729EA9EF448F4A8DA9"

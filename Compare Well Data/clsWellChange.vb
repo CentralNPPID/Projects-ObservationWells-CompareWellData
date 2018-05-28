@@ -203,6 +203,12 @@ Public ReadOnly Property WellName() As String
     End Get
 End Property
 
+    Public ReadOnly Property WellId() As Integer
+        Get
+            Return wtWell.WellID
+        End Get
+    End Property
+
     #End Region
 
 Public Sub New(ByVal intWellID As Integer)
