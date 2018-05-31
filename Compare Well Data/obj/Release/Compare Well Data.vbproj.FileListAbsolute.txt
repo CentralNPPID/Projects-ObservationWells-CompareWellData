@@ -17,3 +17,7 @@ C:\Projects\Projects-ObservationWells-CompareWellData\Compare Well Data\obj\Rele
 C:\Projects\Projects-ObservationWells-CompareWellData\Compare Well Data\obj\Release\Compare Well Data.vbproj.GenerateResource.Cache
 C:\Projects\Projects-ObservationWells-CompareWellData\Compare Well Data\obj\Release\Compare Well Data.exe
 C:\Projects\Projects-ObservationWells-CompareWellData\Compare Well Data\obj\Release\Compare Well Data.xml
+C:\Projects\Projects-ObservationWells-CompareWellData\Compare Well Data\bin\Find Range.dll
+C:\Projects\Projects-ObservationWells-CompareWellData\Compare Well Data\bin\Find Range.pdb
+C:\Projects\Projects-ObservationWells-CompareWellData\Compare Well Data\bin\Find Range.xml
+C:\Projects\Projects-ObservationWells-CompareWellData\Compare Well Data\obj\Release\Compare Well Data.vbprojResolveAssemblyReference.cache

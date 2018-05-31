@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<doc>
+  <assembly>
+    <name>Find Range</name>
+    <version>1.0.2068.23290</version>
+    <fullname>Find Range, Version=1.0.2068.23290, Culture=neutral, PublicKeyToken=null</fullname>
+  </assembly>
+  <members>
+    <member name="E:Find_Range.frmFindRange.RangeChosen">
+      <summary>
+ This is raised whenever the user presses the OK button. 
+ The form passes back the beginning Township, Range and Section and 
+ the ending Township, Range and Section. 
+ </summary>
+    </member>
+    <member name="E:Find_Range.frmFindRange.RangeChosen">
+      <summary>
+ This is raised whenever the user presses the OK button. 
+ The form passes back the beginning Township, Range and Section and 
+ the ending Township, Range and Section. 
+ </summary>
+    </member>
+  </members>
+</doc>

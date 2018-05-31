@@ -76,9 +76,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\DLLs\CNPPID\CNPPID\CNPPID\bin\Release\CNPPID.dll</HintPath>
     </Reference>
-    <Reference Include="Find Range">
-      <Name>Find Range</Name>
-      <HintPath>..\..\..\Custom Forms\Find Range\bin\Find Range.dll</HintPath>
+    <Reference Include="Find Range, Version=1.0.2068.23290, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Projects-CustomForms-FindRange\bin\Find Range.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic">
       <Name>Microsoft.VisualBasic</Name>

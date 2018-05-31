@@ -1041,27 +1041,43 @@ Private Function DescriptionIsInRange(ByVal CurrDesc As String, ByVal StartDesc 
 '   in CurrDesc is within the range of StartDesc and EndDesc.  The format of CurrDesc is
 '   T00N R00W 00 AAAA 00000 and StartDesc and EndDesc only have information in the
 '   Township, Range and Section fields.
-Dim TS As String
-Dim RA As String
-Dim SE As String
+Dim TS As Integer
+Dim RA As Integer
+Dim SE As Integer
 
     If CurrDesc = vbNullString Then
         Return False
     End If
 
-    TS = Mid(CurrDesc, 2, 2)
-    RA = Mid(CurrDesc, 7, 2)
-    SE = Mid(CurrDesc, 11, 2)
+    TS = CInt(Mid(CurrDesc, 2, 2))
+    RA = CInt(Mid(CurrDesc, 7, 2))
+    SE = CInt(Mid(CurrDesc, 11, 2))
 
-    DescriptionIsInRange = False
+    Dim CurrValue As Integer = (TS * 1000) + (RA * 100) + (SE * 10)
+    Dim StartValue As Integer = (StartDesc.Township * 1000) + (StartDesc.Range * 100) + (StartDesc.Section * 10)
+    Dim EndValue As Integer = (EndDesc.Township * 1000) + (EndDesc.Range * 100) + (EndDesc.Section * 10)
 
-    If CInt(TS) >= StartDesc.Township And CInt(TS) <= EndDesc.Township Then
-        If CInt(RA) >= StartDesc.Range And CInt(RA) <= EndDesc.Range Then
-            If CInt(SE) >= StartDesc.Section And CInt(SE) <= EndDesc.Section Then
-                DescriptionIsInRange = True
-            End If
-        End If
+    If StartValue > EndValue Then
+            Dim temp As Integer = StartValue
+            StartValue = EndValue
+            EndValue = temp
     End If
+
+    Return CurrValue >= StartValue And CurrValue <= EndValue
+
+    'TS = Mid(CurrDesc, 2, 2)
+    'RA = Mid(CurrDesc, 7, 2)
+    'SE = Mid(CurrDesc, 11, 2)
+
+    'DescriptionIsInRange = False
+
+    'If CInt(TS) >= StartDesc.Township And CInt(TS) <= EndDesc.Township Then
+    '    If CInt(RA) >= StartDesc.Range And CInt(RA) <= EndDesc.Range Then
+    '        If CInt(SE) >= StartDesc.Section And CInt(SE) <= EndDesc.Section Then
+    '            DescriptionIsInRange = True
+    '        End If
+    '    End If
+    'End If
 
 End Function        '   DescriptionIsInRange
 
